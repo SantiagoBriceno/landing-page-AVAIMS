@@ -1,0 +1,17 @@
+<div class="carrousel-container">
+  <div class="carrousel-content" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+    @for (item of items; track $index) {
+    <div class="carrousel-item">
+      <img [src]="item" alt="carrousel image" />
+    </div>
+    }
+  </div>
+  <div class="carrousel-controls">
+    <button mat-icon-button (click)="prev()" aria-label="icon button left control">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <button mat-icon-button (click)="next()" aria-label="icon button right control">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+</div>

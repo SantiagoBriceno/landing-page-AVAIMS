@@ -1,0 +1,82 @@
+.header-container {
+  width: 100%;
+  background-color: #ffffff56;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0;          /* Alinea el header en la parte superior */
+  left: 0;         /* Alinea el header a la izquierda */
+  right: 0;        /* Alinea el header a la derecha */
+  z-index: 1000;  /* Asegura que el header esté por encima de otros elementos */
+  background-color: white; /* Cambia el color de fondo si es necesario */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container nav {
+  padding: 20px;
+  width: 100%;
+}
+
+.nav-logo {
+  gap: 10px;
+}
+
+.logo-container img {
+  width: 50px;
+}
+
+.nav-logo h1 {
+  font-size: 32px;
+  color: #333;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  margin: 0;
+}
+
+.nav-title h2{
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+// Contenedor de los items de navegación
+.nav-container .nav-items {
+  width: 30%
+}
+
+.nav-items ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav-items ul li {
+  margin-right: 0;
+}
+
+.nav-items ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-items ul li a:hover {
+  color: #007bff;
+}
+
+.nav-items .container-social{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* Media Queries para Responsividad  de los contenedores dentro de nav items cuando llega a un width de pantalla de 1500*/
+
+@media (max-width: 1500px) {
+  .nav-container .nav-items {
+    width: 60%
+  }
+}
+

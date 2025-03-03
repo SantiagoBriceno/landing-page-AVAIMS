@@ -1,0 +1,106 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.section-presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 3rem;
+}
+
+.presentation-container{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.company-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  width: 50%;
+}
+
+.company-description h1 {
+  font-size: 2.5em;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  color: #333;
+}
+
+.company-description p {
+  font-size: 1em;
+  width: 80%;
+  text-align: justify;
+  font-weight: 300;
+  color: #333;
+}
+
+.company-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.company-img-container img {
+  width: 75%;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .section-presentation {
+    flex-direction: column; /* Mantener la dirección de la columna */
+    padding: 15px; /* Reducir el padding */
+  }
+
+  .section-presentation .presentation-container{
+    flex-direction: column;
+  }
+
+  .company-description,
+  .company-img-container {
+    width: 100%; /* Hacer que ambos contenedores ocupen el 100% */
+    align-items: center; /* Centrar el contenido */
+    text-align: center; /* Centrar el texto */
+  }
+
+  .company-description h1 {
+    font-size: 2em; /* Reducir el tamaño del título */
+  }
+
+  .company-description p {
+    font-size: 0.9em; /* Reducir el tamaño de la fuente del párrafo */
+    width: 90%; /* Aumentar el ancho del párrafo */
+  }
+
+  .company-img-container img {
+    width: 100%; /* Hacer que la imagen ocupe el 100% del contenedor */
+  }
+}
+
+@media (max-width: 480px) {
+  .company-description h1 {
+    font-size: 1.5em; /* Reducir aún más el tamaño del título */
+  }
+
+  .company-description p {
+    font-size: 0.8em; /* Reducir aún más el tamaño de la fuente del párrafo */
+  }
+
+  .company-img-container img {
+    width: 100%; /* Asegurarse de que la imagen ocupe el 100% */
+  }
+
+  button {
+    font-size: 0.9em; /* Ajustar el tamaño del botón */
+  }
+}

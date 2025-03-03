@@ -1,0 +1,15 @@
+<section class="section-last-notices">
+  <div class="full-width flex column">
+    <div class="section-title text-center">
+      <h1 class="title">Noticias recientes</h1>
+    </div>
+    <div class="flex align-center justify-center grouper full-width wrap">
+      @for (notice of notices; track $index) {
+      <my-card></my-card>
+      }
+    </div>
+  </div>
+  <button mat-flat-button>
+    Ver más
+  </button>
+</section>

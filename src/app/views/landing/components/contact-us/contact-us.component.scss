@@ -1,0 +1,40 @@
+.contact-us-container {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: center;
+}
+
+.form-wrapper{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+.my-button{
+  width: 30%;
+}
+
+.item-container{
+  gap: 1.5rem;
+}
+
+.text-mb{
+  margin-bottom: 1.5rem;
+  width: 65%;
+}
+
+.input-group{
+  gap: 1rem;
+}
+
+.input-group .my-input{
+  width: 100%;
+}
