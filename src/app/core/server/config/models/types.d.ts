@@ -17,9 +17,10 @@ export interface Sponsor {
 }
 
 export interface Contact {
+  id?: number
   affair: string
   name: string
-  lastName: string
+  last_name: string
   email: string
   phone: string
   message: string
