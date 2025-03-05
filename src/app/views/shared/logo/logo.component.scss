@@ -7,4 +7,15 @@ h1 {
   font-weight: 500;
   letter-spacing: .2rem;
   margin: 0;
+  transition: ease-in .1s;
+}
+
+h1:hover {
+  color: #0056b3;
+  scale: 1.1;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
