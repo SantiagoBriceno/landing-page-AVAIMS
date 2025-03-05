@@ -7,6 +7,8 @@ import {
 import express from 'express'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import noticesRouter from './app/core/server/notices/routes/v1/notices.routes'
+import sponsorRouter from './app/core/server/sponsor/routes/sponsor.routes'
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url))
 const browserDistFolder = resolve(serverDistFolder, '../browser')
@@ -14,14 +16,14 @@ const browserDistFolder = resolve(serverDistFolder, '../browser')
 const app = express()
 const angularApp = new AngularNodeAppEngine()
 
-app.get('/api/**', (req, res) => {
-  res.send('Hello from the server!')
+app.get('/api/**', (req, res, next) => {
+  next()
+  // Validaciones
 })
 
-app.get('/api/user', (req, res) => {
-  res.json({ name: 'John Doe' })
-}
-)
+app.use('/api/notices', noticesRouter)
+
+app.use('/api/sponsor', sponsorRouter)
 
 /**
  * Serve static files from /browser
@@ -51,7 +53,7 @@ app.use('/**', (req, res, next) => {
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
 if (isMainModule(import.meta.url)) {
-  const port = process.env['PORT'] || 4000
+  const port = process.env['PORT'] ?? 4000
   app.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`)
   })
