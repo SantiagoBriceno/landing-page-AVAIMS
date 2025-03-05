@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core'
-import { Sponsor } from '../../../../core/server/config/models/types'
+import { Sponsor } from '../../../../../core/server/config/models/types'
 import { OurSponsorsService } from './our-sponsors.service'
-import { fadeIn } from '../../../shared/animations/animation'
-import { BrandContainerComponent } from '../../../shared/brand-container/brand-container.component'
+import { fadeIn } from '../../../../shared/animations/animation'
+import { BrandContainerComponent } from '../../../../shared/brand-container/brand-container.component'
 
 @Component({
   selector: 'app-our-sponsors',

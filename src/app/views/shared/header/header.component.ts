@@ -2,13 +2,15 @@ import { afterNextRender, Component, ElementRef, ViewChild } from '@angular/core
 import { LogoComponent } from '../logo/logo.component'
 import { RouterModule } from '@angular/router'
 import { animate, state, style, transition, trigger } from '@angular/animations'
+import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component'
 
 @Component({
   selector: 'header-landing-page',
   standalone: true,
   imports: [
     LogoComponent,
-    RouterModule
+    RouterModule,
+    SidebarMobileComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -30,6 +32,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 export class HeaderComponent {
   @ViewChild('content') contentRef!: ElementRef
   isMobile: boolean = false
+  isOpen: boolean = false
   public animationState: string = 'initial'
 
   constructor () {
@@ -38,5 +41,9 @@ export class HeaderComponent {
       console.log(this.contentRef.nativeElement.offsetWidth)
       this.isMobile = this.contentRef.nativeElement.offsetWidth < 768
     })
+  }
+
+  toggleSidebar (): void {
+    this.isOpen = !this.isOpen
   }
 }

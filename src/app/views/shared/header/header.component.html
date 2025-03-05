@@ -1,14 +1,17 @@
 <header #content class="header-container flex" [@slideDown]="animationState">
-  <nav class="nav-container flex justify-between align-center" >
+  <nav class="nav-container flex justify-between align-center">
     <app-logo></app-logo>
     @if (!isMobile) {
     <div class="nav-items flex align-center justify-between">
       <div class="container-items flex">
         <ul>
-          <li><a routerLink="/home" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Inicio</a></li>
-          <li><a routerLink="/about-us" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Nosotros</a></li>
-          <li><a routerLink="/asdasd" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Noticias</a></li>
-          <li><a routerLink="/contact-us" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Contacto</a></li>
+          <li><a routerLink="/home/" routerLinkActive="activeLink" [routerLinkActiveOptions]="{exact: true}"
+              ariaCurrentWhenActive="page">Inicio</a></li>
+          <li><a routerLink="/home/about-us" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Nosotros</a>
+          </li>
+          <li><a routerLink="/home/asdasd" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Noticias</a></li>
+          <li><a routerLink="/home/contact-us" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Contacto</a>
+          </li>
         </ul>
       </div>
       <div class="container-social">
@@ -26,7 +29,7 @@
     }
     <!-- Boton responsive -->
     @else {
-    <button class="my-button-only-icon header-component" aria-label="item-list">
+    <button (click)="toggleSidebar()" class="my-button-only-icon header-component" aria-label="item-list">
       <i class="fa-solid fa-ellipsis-vertical"></i>
     </button>
 
@@ -34,3 +37,5 @@
 
   </nav>
 </header>
+
+<app-sidebar-mobile [isOpen]="isOpen"></app-sidebar-mobile>

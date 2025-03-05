@@ -1,7 +1,8 @@
 import { Component } from '@angular/core'
-import { LogoComponent } from '../../../shared/logo/logo.component'
+import { LogoComponent } from '../../../../shared/logo/logo.component'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
-import { Contact } from '../../../../core/server/config/models/types'
+import { Contact } from '../../../../../core/server/config/models/types'
+import { ContactUsService } from './contact-us.service'
 
 @Component({
   selector: 'app-contact-us',
@@ -16,7 +17,8 @@ import { Contact } from '../../../../core/server/config/models/types'
 export class ContactUsComponent {
   myFormContact: FormGroup
   constructor (
-    private readonly fb: FormBuilder
+    private readonly fb: FormBuilder,
+    private readonly contactUsService: ContactUsService
   ) {
     this.myFormContact = this.fb.group({
       affair: ['', Validators.required],
@@ -36,11 +38,17 @@ export class ContactUsComponent {
     const newContactData: Contact = {
       affair: this.myFormContact.value.affair,
       name: this.myFormContact.value.name,
-      lastName: this.myFormContact.value.lastName,
+      last_name: this.myFormContact.value.lastName,
       email: this.myFormContact.value.email,
       phone: this.myFormContact.value.phone,
       message: this.myFormContact.value.message
     }
-    console.log(this.myFormContact.value)
+    this.contactUsService.sendContactUsMessage(newContactData).subscribe(
+      (response) => {
+        console.log('Mensaje enviado')
+      },
+      (error) => {
+        console.error(error)
+      })
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { PresentationComponent } from './components/presentation/presentation.component'
 import { LastNoticeComponent } from './components/last-notice/last-notice.component'
-import { CarrouselComponent } from '../shared/carrousel/carrousel.component'
+import { CarrouselComponent } from '../../shared/carrousel/carrousel.component'
 import { ContactUsComponent } from './components/contact-us/contact-us.component'
 import { OurSponsorsComponent } from './components/our-sponsors/our-sponsors.component'
 
