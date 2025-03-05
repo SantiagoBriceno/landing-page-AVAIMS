@@ -7,8 +7,9 @@ import {
 import express from 'express'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import noticesRouter from './app/core/server/notices/routes/v1/notices.routes'
+import noticesRouter from './app/core/server/notices/routes/notices.routes'
 import sponsorRouter from './app/core/server/sponsor/routes/sponsor.routes'
+import contactRouter from './app/core/server/contact/routes/contact.routes'
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url))
 const browserDistFolder = resolve(serverDistFolder, '../browser')
@@ -24,6 +25,8 @@ app.get('/api/**', (req, res, next) => {
 app.use('/api/notices', noticesRouter)
 
 app.use('/api/sponsor', sponsorRouter)
+
+app.use('/api/contact-us', contactRouter)
 
 /**
  * Serve static files from /browser
