@@ -1,29 +1,42 @@
 import { afterNextRender, Component, ElementRef, ViewChild } from '@angular/core'
-import { MatButtonModule } from '@angular/material/button'
-import { MatIconModule } from '@angular/material/icon'
-import { MatMenuModule } from '@angular/material/menu'
 import { LogoComponent } from '../logo/logo.component'
+import { RouterModule } from '@angular/router'
+import { animate, state, style, transition, trigger } from '@angular/animations'
 
 @Component({
   selector: 'header-landing-page',
   standalone: true,
   imports: [
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    LogoComponent
+    LogoComponent,
+    RouterModule
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
+  animations: [trigger('slideDown', [
+    state('void', style({
+      height: '0',
+      opacity: 0,
+      overflow: 'hidden'
+    })),
+    state('*', style({
+      height: '*',
+      opacity: 1
+    })),
+    transition('void <=> *', [
+      animate('500ms ease-in-out')
+    ])
+  ])]
 })
 export class HeaderComponent {
-  @ViewChild('content') contentRef?: ElementRef
+  @ViewChild('content') contentRef!: ElementRef
   isMobile: boolean = false
+  public animationState: string = 'initial'
 
   constructor () {
     afterNextRender(() => {
-      console.log(this.contentRef?.nativeElement.scrollHeight)
-      this.isMobile = this.contentRef?.nativeElement.offsetWidth <= 768
+      console.log('HeaderComponent rendered')
+      console.log(this.contentRef.nativeElement.offsetWidth)
+      this.isMobile = this.contentRef.nativeElement.offsetWidth < 768
     })
   }
 }

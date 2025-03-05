@@ -1,6 +1,6 @@
 <section class="section-presentation">
   <div class=" presentation-container">
-    <div class="company-description flex column ">
+    <div #description class="company-description flex column" [@slideInLeft]>
       <h1>
         AVAIMS
       </h1>
@@ -11,13 +11,13 @@
         diseño, estudio y selección de equipos para edificaciones medicas
       </p>
     </div>
-    <div class="company-img-container">
+    <div #image class="company-img-container" [@slideInRight]>
       <img src="images/team.png" alt="company-img" />
     </div>
   </div>
 
-  <button mat-fab extended>
-    <mat-icon>favorite</mat-icon>
+  <button #button class="my-button">
+    <i class="fa-regular fa-heart"></i>
     Conocenos más acá
   </button>
 </section>

@@ -1,19 +1,46 @@
 import { Component } from '@angular/core'
-import { MatButtonModule } from '@angular/material/button'
-import { MatInputModule } from '@angular/material/input'
 import { LogoComponent } from '../../../shared/logo/logo.component'
-import { MatIconModule } from '@angular/material/icon'
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { Contact } from '../../../../core/server/config/models/types'
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
   templateUrl: './contact-us.component.html',
   imports: [
-    MatInputModule,
-    MatButtonModule,
-    LogoComponent,
-    MatIconModule
+    ReactiveFormsModule,
+    LogoComponent
   ],
   styleUrl: './contact-us.component.scss'
 })
-export class ContactUsComponent {}
+export class ContactUsComponent {
+  myFormContact: FormGroup
+  constructor (
+    private readonly fb: FormBuilder
+  ) {
+    this.myFormContact = this.fb.group({
+      affair: ['', Validators.required],
+      name: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
+      message: ['', Validators.required]
+    })
+  }
+
+  onSubmit (): void {
+    if (!this.myFormContact.valid) {
+      console.log('Formulario inválido')
+      return
+    }
+    const newContactData: Contact = {
+      affair: this.myFormContact.value.affair,
+      name: this.myFormContact.value.name,
+      lastName: this.myFormContact.value.lastName,
+      email: this.myFormContact.value.email,
+      phone: this.myFormContact.value.phone,
+      message: this.myFormContact.value.message
+    }
+    console.log(this.myFormContact.value)
+  }
+}

@@ -1,36 +1,25 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { MyCardComponent } from '../../../shared/card/my-card.component'
-import { MatButtonModule } from '@angular/material/button'
-
-interface Notice {
-  title: string
-  description: string
-  img: string
-}
+import { LastNoticeService } from './last-notice.service'
+import { Notice } from '../../../../core/server/config/models/types'
 
 @Component({
   selector: 'app-last-notice',
   templateUrl: './last-notice.component.html',
   styleUrls: ['./last-notice.component.scss'],
   standalone: true,
-  imports: [MyCardComponent, MatButtonModule]
+  imports: [MyCardComponent]
 })
-export class LastNoticeComponent {
-  public notices: Notice[] = [
-    {
-      title: 'Notice 1',
-      description: 'Description 1',
-      img: 'https://via.placeholder.com/150'
+export class LastNoticeComponent implements OnInit {
+  public notices: Notice[] = []
+  constructor (private readonly LastNoticeService: LastNoticeService) {}
+
+  ngOnInit (): void {
+    this.LastNoticeService.getNotices().subscribe((data) => {
+      this.notices = data.notices
     },
-    {
-      title: 'Notice 2',
-      description: 'Description 2',
-      img: 'https://via.placeholder.com/150'
-    },
-    {
-      title: 'Notice 3',
-      description: 'Description 3',
-      img: 'https://via.placeholder.com/150'
-    }
-  ]
+    (error) => {
+      console.error(error)
+    })
+  }
 }

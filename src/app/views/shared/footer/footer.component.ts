@@ -1,6 +1,4 @@
 import { Component } from '@angular/core'
-import { MatButtonModule } from '@angular/material/button'
-import { MatIconModule } from '@angular/material/icon'
 import { LogoComponent } from '../logo/logo.component'
 
 @Component({
@@ -8,8 +6,6 @@ import { LogoComponent } from '../logo/logo.component'
   templateUrl: './footer.component.html',
   standalone: true,
   imports: [
-    MatIconModule,
-    MatButtonModule,
     LogoComponent
   ],
   styleUrls: ['./footer.component.scss']

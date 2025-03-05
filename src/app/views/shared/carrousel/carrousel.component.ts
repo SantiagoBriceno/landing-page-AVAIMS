@@ -1,14 +1,10 @@
 import { Component } from '@angular/core'
-import { MatButtonModule } from '@angular/material/button'
-import { MatIconModule } from '@angular/material/icon'
 
 @Component({
   selector: 'app-carrousel',
   standalone: true,
   templateUrl: './carrousel.component.html',
   imports: [
-    MatIconModule,
-    MatButtonModule
   ],
   styleUrls: ['./carrousel.component.scss']
 })
@@ -27,5 +23,9 @@ export class CarrouselComponent {
 
   prev (): void {
     this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length
+  }
+
+  isActive (index: number): boolean {
+    return this.currentIndex === index
   }
 }

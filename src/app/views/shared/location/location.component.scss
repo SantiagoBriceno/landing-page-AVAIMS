@@ -1,3 +1,47 @@
-.location{
+.location {
   margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.map {
+  width: 600px;
+  height: 400px;
+}
+
+.location {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.map {
+  width: 600px;
+  height: 400px;
+}
+
+/* Estilos para pantallas más pequeñas (por ejemplo, móviles) */
+@media (max-width: 768px) {
+  .location {
+    margin-top: 2rem;
+    /* Reduce el margen en pantallas pequeñas */
+    margin-bottom: 2rem;
+  }
+
+  .map {
+    width: 100%;
+    /* El mapa ocupa todo el ancho disponible */
+    height: 300px;
+    /* Reduce la altura del mapa */
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas (por ejemplo, móviles muy pequeños) */
+@media (max-width: 480px) {
+  .location {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .map {
+    height: 250px;
+  }
 }

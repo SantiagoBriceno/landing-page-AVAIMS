@@ -1,15 +1,16 @@
-<section class="section-last-notices">
+<section class="semigrouper flex column align-center justify-center full-width">
   <div class="full-width flex column">
     <div class="section-title text-center">
       <h1 class="title">Noticias recientes</h1>
     </div>
-    <div class="flex align-center justify-center grouper full-width wrap">
+    <div class="news-cards-container flex align-center justify-center">
       @for (notice of notices; track $index) {
-      <my-card></my-card>
+      <my-card [title]="notice.title" [description]="notice.description" [created_at]="notice.date" [img]="notice.img"></my-card>
       }
     </div>
+
   </div>
-  <button mat-flat-button>
+  <button class="my-button">
     Ver más
   </button>
 </section>
