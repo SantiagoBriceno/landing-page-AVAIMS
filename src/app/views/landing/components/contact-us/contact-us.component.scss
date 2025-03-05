@@ -1,40 +1,117 @@
 .contact-us-container {
-  margin: 1.5rem 0;
   display: flex;
   flex-direction: row;
   gap: 3rem;
   align-items: center;
 }
 
-.form-wrapper{
+.form-wrapper {
   width: 50%;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
 }
 
-.my-button{
+.my-button {
   width: 30%;
 }
 
-.item-container{
+.item-container {
   gap: 1.5rem;
 }
 
-.text-mb{
+.text-mb {
   margin-bottom: 1.5rem;
   width: 65%;
 }
 
-.input-group{
+.form-contacto__campo {
+  margin-bottom: 15px;
+}
+
+.form-contacto__label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-contacto__input,
+.form-contacto__textarea {
+  width: calc(100% - 12px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #F5F5F5;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-contacto__textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-contacto__grupo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-contacto__grupo .form-contacto__campo {
+  width: 48%;
+}
+
+.input-group {
   gap: 1rem;
 }
 
-.input-group .my-input{
+.input-group .my-input {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-us-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-wrapper {
+    width: 80%;
+    padding: 1.5rem;
+  }
+
+  .input-group {
+    gap: 0rem;
+    flex-wrap: wrap;
+  }
+
+  .my-input {
+    width: 80%;
+  }
+
+  .my-button {
+    width: 100%;
+  }
+
+  .text-mb {
+    width: 100%;
+  }
+
+  .form-contacto {
+    padding: 10px;
+  }
+
+  .form-contacto__input,
+  .form-contacto__textarea {
+    font-size: 14px;
+  }
+
+  .form-contacto__boton {
+    font-size: 14px;
+  }
+
 }

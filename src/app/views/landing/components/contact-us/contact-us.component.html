@@ -1,57 +1,54 @@
 <section class="contact-us-container">
   <div class="form-wrapper">
+    <form class="form" [formGroup]="myFormContact" (ngSubmit)="onSubmit()">
+      <p>Frase con referenacia a que nos envíe cualquier inquietud que nosotros la responderemos</p>
+      <div class="form-contacto__campo">
+        <label for="asunto" class="form-contacto__label">Asunto</label>
+        <input type="text" id="asunto" name="asunto" formControlName="affair" class="form-contacto__input">
+      </div>
+      <div class="form-contacto__grupo">
+        <div class="form-contacto__campo">
+          <label for="nombre" class="form-contacto__label">Nombre</label>
+          <input type="text" id="nombre" name="nombre" formControlName="name" class="form-contacto__input">
+        </div>
+        <div class="form-contacto__campo">
+          <label for="apellido" class="form-contacto__label">Apellido</label>
+          <input type="text" formControlName="lastName" id="apellido" name="apellido" class="form-contacto__input">
+        </div>
+      </div>
+      <div class="form-contacto__grupo">
+        <div class="form-contacto__campo">
+          <label for="correo" class="form-contacto__label">Correo</label>
+          <input type="email" id="correo" name="correo" formControlName="email" class="form-contacto__input">
+        </div>
+        <div class="form-contacto__campo">
+          <label for="telefono" class="form-contacto__label">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" formControlName="phone" class="form-contacto__input">
+        </div>
+      </div>
+      <div class="form-contacto__campo">
+        <label for="mensaje" class="form-contacto__label">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" formControlName="message" class="form-contacto__textarea"></textarea>
+      </div>
 
-    <form class="form">
-      <p>Frase con referencia a que nos envie cualquier inquietud que la responderemos</p>
-      <mat-form-field>
-        <mat-label>Asunto</mat-label>
-        <input matInput placeholder="Asunto" required>
-      </mat-form-field>
-      <div class="flex input-group">
-        <mat-form-field class="my-input">
-          <mat-label>Nombre</mat-label>
-          <input matInput placeholder="Nombre" required>
-        </mat-form-field>
-        <mat-form-field class="my-input">
-          <mat-label>Apellido</mat-label>
-          <input matInput placeholder="Apellido" required>
-        </mat-form-field>
-      </div>
-      <div class="flex input-group">
-        <mat-form-field class="my-input">
-          <mat-label>Correo</mat-label>
-          <input matInput placeholder="Correo" required>
-        </mat-form-field>
-        <mat-form-field class="my-input">
-          <mat-label>Telefono</mat-label>
-          <input matInput placeholder="Telefono" required>
-        </mat-form-field>
-      </div>
-      <mat-form-field>
-        <mat-label>Mensaje</mat-label>
-        <textarea matInput #message maxlength="100" placeholder="Mensaje" required></textarea>
-        <mat-hint align="end">{{message.value.length}} / 100</mat-hint>
-      </mat-form-field>
-      <button class="my-button" mat-stroked-button color="primary">Enviar</button>
+      <button type="submit" class="my-button">
+        Enviar
+      </button>
     </form>
   </div>
   <div class="half-width flex column">
-    <app-logo></app-logo>
+    <app-logo color="#f4f6f"></app-logo>
     <p class="text-mb">Estamos aquí para ayudarte. Encuéntranos en nuestra oficina o contáctanos a través de teléfono o
       correo
       electrónico.</p>
     <div class="flex column item-container">
       <!-- Logo del telefono -->
       <div class="flex item-container">
-        <mat-icon>
-          phone
-        </mat-icon>
+        <i class="fa-solid fa-phone"></i>
         <span>(+58) 412 2786751</span>
       </div>
       <div class="flex item-container">
-        <mat-icon>
-          email
-        </mat-icon>
+        <i class="fa-solid fa-envelope"></i>
         <span>{{'Santiago@Gmail.com'}}</span>
       </div>
 
