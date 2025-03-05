@@ -2,11 +2,17 @@
 $background-principal: #F5F5F5;
 $background-secundario: #1C1C1C;
 $texto-principal: #363636;
-$texto-secundario: #F5F5F5; // Color contrastante para el fondo secundario
-$color-principal: #A3C1DA;
+$texto-secundario: #f4f6f1; // Color contrastante para el fondo secundario
+$color-principal: #45abff;
 $color-borde: #FF5722; // Color de borde
 $color-error: #FF4081; // Color de error
-$color-hover: #FF9800; // Color de hover
+$color-hover: #007bff;
+; // Color de hover
+
+html,
+body {
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -15,6 +21,14 @@ body {
   /* Ajusta este valor según la altura de tu header */
   background-color: $background-principal;
   color: $texto-principal;
+}
+
+.header-component {
+  background-color: #ffffff56;
+}
+
+.footer-component {
+  background-color: #33333310;
 }
 
 .flex {
@@ -45,6 +59,10 @@ body {
   gap: 3rem
 }
 
+.semigrouper {
+  gap: 1.5rem;
+}
+
 .full-width {
   width: 100%;
 }
@@ -65,5 +83,49 @@ body {
 .text-center {
   text-align: center;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.my-button {
+  background-color: $color-principal;
+  color: $texto-secundario;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.35s;
+}
+
+.my-button:hover {
+  background-color: $color-hover;
+}
+
+.my-button-only-icon {
+  color: $texto-principal;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.my-button-only-icon i {
+  font-size: 1.2rem;
+}
+
+.my-button-only-icon i:hover {
+  color: $color-hover;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #333;
+  margin-top: 1rem;
+}
