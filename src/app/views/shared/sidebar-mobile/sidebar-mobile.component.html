@@ -4,24 +4,28 @@
       AVAIMS
     </h1>
   </div>
+  <button class="close-button" (click)="closeSidebar()">
+    <i class="fa fa-times"></i>
+  </button>
   <div class="sidebar-content">
     <ul class="sidebar-list">
-      <li class="sidebar-item">
-        <a class="sidebar-link" href="/home">
-          <i class="fas fa-home"></i>
-          <span class="sidebar-text">Home</span>
+      <li class="sidebar-item ">
+        <a class="sidebar-link flex semi-grouper" routerLink="/home/" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active">
+          <i class="fa fa-home"></i>
+          <span class="sidebar-text">Inicio</span>
         </a>
       </li>
       <li class="sidebar-item">
         <a class="sidebar-link" href="/about">
-          <i class="fas fa-info-circle"></i>
+          <i class="fa fa-info-circle"></i>
           <span class="sidebar-text">About</span>
         </a>
       </li>
       <li class="sidebar-item">
-        <a class="sidebar-link" href="/contact">
-          <i class="fas fa-envelope"></i>
-          <span class="sidebar-text">Contact</span>
+        <a class="sidebar-link" routerLink="/home/contact-us" [routerLinkActiveOptions]="{exact:true}"
+          routerLinkActive="active">
+          <i class="fa fa-envelope"></i>
+          <span class="sidebar-text">contáctanos</span>
         </a>
       </li>
     </ul>

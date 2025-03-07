@@ -1,11 +1,11 @@
 export interface Notice {
-  id: number
+  id?: number
   title: string
   description: string
   date: Date
   img: string
-  created_at: Date
-  updated_at: Date
+  created_at?: Date
+  updated_at?: Date
 }
 
 export interface Sponsor {

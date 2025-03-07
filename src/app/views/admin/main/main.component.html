@@ -1,0 +1,18 @@
+<section class="flex column">
+  <!-- Vamos a mostrar las ultimas noticias registradas (Las que se ven en landing page / home)-->
+  <div>
+    <h1>Noticias cargadas en el sistema</h1>
+    <div class="notices-container flex wrap grouper">
+      @for (notice of notices; track $index) {
+      <my-card [admin]="true" [title]="notice.title" [description]="notice.description" [created_at]="notice.date"
+        [img]="notice.img"></my-card>
+      }
+    </div>
+  </div>
+  <div>
+    <h1>Aliados institucionales</h1>
+    <div>
+
+    </div>
+  </div>
+</section>

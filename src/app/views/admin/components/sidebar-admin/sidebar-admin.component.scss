@@ -1,0 +1,51 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #555;
+
+    h1 {
+      margin: 0;
+      text-align: left;
+      font-weight: 400;
+      letter-spacing: .2rem;
+    }
+
+    img {
+      max-width: 100px;
+    }
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 15px 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+
+
+        i {
+          margin-right: 10px;
+        }
+
+        &:hover,
+        &.active {
+          background-color: #555;
+        }
+      }
+    }
+  }
+}

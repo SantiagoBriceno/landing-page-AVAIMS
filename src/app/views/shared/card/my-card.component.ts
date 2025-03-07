@@ -13,10 +13,11 @@ import { fadeIn } from '../animations/animation'
   animations: [fadeIn]
 })
 export class MyCardComponent implements AfterViewInit {
-  @Input() title: string = 'Nueva Card'
-  @Input() description: string = 'Descripción de la card que debe tener texto'
-  @Input() img: string = ''
-  @Input() created_at: Date = new Date()
+  @Input() title: string | undefined = 'Nueva Card'
+  @Input() description: string | undefined = 'Descripción de la card que debe tener texto'
+  @Input() img: string | ArrayBuffer | null = 'images/notices/1741302272109fondodefault.jpeg'
+  @Input() created_at: Date | undefined = new Date()
+  @Input() admin: boolean = false
   public animationState: string = 'initial'
 
   @ViewChild('newsCard') newsCard!: ElementRef
@@ -36,6 +37,7 @@ export class MyCardComponent implements AfterViewInit {
 
       observer.observe(this.newsCard.nativeElement)
     }
+    console.log(this.created_at)
   }
 
   onMouseEnter (): void {

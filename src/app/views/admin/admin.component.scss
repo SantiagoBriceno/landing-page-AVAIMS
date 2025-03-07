@@ -1,0 +1,13 @@
+.main-admin-container {
+  display: flex;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .main{
+    margin-left: 1rem;
+  }
+}

@@ -1,0 +1,45 @@
+.header {
+  background-color: #f0f0f0;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    i {
+      font-size: 1.5em;
+      color: #777;
+    }
+
+    .user-details {
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        font-weight: bold;
+      }
+
+      .role {
+        font-size: 0.9em;
+        color: #777;
+      }
+    }
+  }
+
+  .header-nav {
+    ul {
+      list-style: none;
+      display: flex;
+
+      li {
+        margin-left: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+}

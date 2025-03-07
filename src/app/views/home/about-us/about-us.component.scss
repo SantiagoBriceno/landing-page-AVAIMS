@@ -1,0 +1,35 @@
+.about-us-container {
+  margin-top: 2rem;
+  .about-us-content {
+    width: 80%;
+    margin: 0 auto;
+
+    .about-us-description {
+      width: 50%;
+
+      h1 {
+        letter-spacing: .5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: justify;
+      }
+    }
+
+    .about-us-img-container {
+      width: 50%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+
+
+
+
+  }
+}

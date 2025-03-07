@@ -3,6 +3,7 @@ import { LogoComponent } from '../logo/logo.component'
 import { RouterModule } from '@angular/router'
 import { animate, state, style, transition, trigger } from '@angular/animations'
 import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component'
+import { DropdownComponent } from '../dropdown/dropdown.component'
 
 @Component({
   selector: 'header-landing-page',
@@ -10,15 +11,15 @@ import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.compone
   imports: [
     LogoComponent,
     RouterModule,
-    SidebarMobileComponent
+    SidebarMobileComponent,
+    DropdownComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   animations: [trigger('slideDown', [
     state('void', style({
       height: '0',
-      opacity: 0,
-      overflow: 'hidden'
+      opacity: 0
     })),
     state('*', style({
       height: '*',
@@ -34,6 +35,10 @@ export class HeaderComponent {
   isMobile: boolean = false
   isOpen: boolean = false
   public animationState: string = 'initial'
+  public dropDownLink: Array<{ label: string, link: string }> = [
+    { label: 'Quiénes somos', link: '/home/about-us/our-history' },
+    { label: 'Postúlate', link: '/home/about-us/join-us' }
+  ]
 
   constructor () {
     afterNextRender(() => {
@@ -44,6 +49,7 @@ export class HeaderComponent {
   }
 
   toggleSidebar (): void {
+    console.log('toggleSidebar')
     this.isOpen = !this.isOpen
   }
 }

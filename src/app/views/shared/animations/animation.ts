@@ -15,3 +15,25 @@ export const fadeIn = trigger('fadeIn', [
   transition('initial => final', animate(1000)),
   transition('final <=> hover', animate('200ms ease-in-out'))
 ])
+
+export const slideInRight =
+  trigger('slideInRight', [
+    transition(':enter', [
+      style({ transform: 'translateX(100%)', opacity: 0 }),
+      animate('800ms ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
+    ]),
+    transition(':leave', [
+      animate('800ms ease-in-out', style({ transform: 'translateX(100%)', opacity: 0 }))
+    ])
+  ])
+
+export const slideInLeft =
+  trigger('slideInLeft', [
+    transition(':enter', [
+      style({ transform: 'translateX(-100%)', opacity: 0 }),
+      animate('800ms ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
+    ]),
+    transition(':leave', [
+      animate('800ms ease-in-out', style({ transform: 'translateX(-100%)', opacity: 0 }))
+    ])
+  ])
