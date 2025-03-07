@@ -1,44 +1,42 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
-import { NoticeFormService } from './notice-form.service'
-import { Notice } from '../../../../../core/server/config/models/types'
+import { NoticeFormService } from './notices-admin.service'
+import { ToastService } from '../../shared/toast/toast.service'
+import { Router } from '@angular/router'
+import { MyCardComponent } from '../../shared/card/my-card.component'
+import { Notice } from '../../../core/server/config/models/types'
 
 @Component({
-  selector: 'app-notice-form',
-  imports: [
-    ReactiveFormsModule
-  ],
-  standalone: true,
-  templateUrl: './notice-form.component.html',
-  styleUrl: './notice-form.component.scss'
+  selector: 'app-notices-admin-fix',
+  imports: [ReactiveFormsModule, MyCardComponent],
+  templateUrl: './notices-admin-fix.component.html',
+  styleUrl: './notices-admin-fix.component.scss'
 })
-export class NoticeFormComponent implements OnInit {
-  @Output() newNotice: EventEmitter<Notice> = new EventEmitter<Notice>()
-  @Output() selectedImageOutput: EventEmitter<ArrayBuffer | string | null> = new EventEmitter<ArrayBuffer | string | null>()
+export class NoticesAdminFixComponent implements OnInit {
   noticeForm: FormGroup
   selectedImage: string | ArrayBuffer | null = null
+  noticePreview: Notice = {
+    title: '',
+    description: '',
+    date: new Date(),
+    url: '',
+    img: ''
+  }
 
-  constructor (private readonly fb: FormBuilder, private readonly noticeFormService: NoticeFormService) {
+  constructor (private readonly fb: FormBuilder, private readonly noticeFormService: NoticeFormService, private readonly router: Router, private readonly toastService: ToastService) {
     this.noticeForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
       date: ['', Validators.required],
+      url: [''],
       img: ['', Validators.required]
     })
   }
 
   ngOnInit (): void {
-    this.noticeForm.valueChanges.subscribe(() => {
-      this.emitNewNotice()
+    this.noticeForm.valueChanges.subscribe((value) => {
+      this.noticePreview = value
     })
-  }
-
-  emitNewNotice (): void {
-    this.newNotice.emit(this.noticeForm.value)
-  }
-
-  emitSelectedImage (): void {
-    this.selectedImageOutput.emit(this.selectedImage)
   }
 
   onFileChange (event: any): void {
@@ -52,16 +50,9 @@ export class NoticeFormComponent implements OnInit {
       const reader = new FileReader()
       reader.onload = () => {
         this.selectedImage = reader.result
-        this.emitSelectedImage()
       }
       reader.readAsDataURL(file)
     }
-  }
-
-  clearImage (): void {
-    this.noticeForm.get('img')?.setValue('')
-    this.noticeForm.get('img')?.updateValueAndValidity()
-    this.selectedImage = null
   }
 
   onSubmit (): void {
@@ -76,6 +67,8 @@ export class NoticeFormComponent implements OnInit {
 
     this.noticeFormService.createNotice(formData).subscribe((response) => {
       console.log(response)
+      this.toastService.showToast('Noticia creada correctamente', 'success', 3000)
+      void this.router.navigate(['/admin'])
     },
     (error) => {
       console.log(error)

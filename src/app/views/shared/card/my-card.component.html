@@ -1,19 +1,18 @@
 <div #newsCard class="news-card" [@fadeIn]="admin ? 'final': animationState" (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()">
   <div class="image-container">
-    <img [src]="img ? img : 'images/notices/1741302272109fondodefault.jpeg'" alt="Noticia">
+    <img [src]="selectedImage ? selectedImage : notice.img ? notice.img : 'images/notices/team.png'" alt="Noticia">
   </div>
-  @if (admin) {
-  <div class="button-container">
-    <button class="action-button edit">Editar</button>
-    <button class="action-button delete">Borrar</button>
-    <button class="action-button view">Ver</button>
-  </div>
-  }
 
   <div class="content">
-    <h2>{{title}}</h2>
-    <p class="description">{{description}}</p>
-    <p class="date">{{created_at | date: 'fullDate'}}</p>
+    <h2>{{notice.title}}</h2>
+    <p class="description">{{notice.description}}</p>
+    <p class="date">{{notice.date | date: 'fullDate'}}</p>
+    @if (notice.url) {
+    <a target="_blank" class="url" href="{{notice.url}}">
+      Leer más
+    </a>
+    }
+
   </div>
 </div>

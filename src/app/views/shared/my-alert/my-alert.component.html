@@ -1,0 +1,11 @@
+@if (show) {
+<div class="alert-overlay">
+  <div class="alert-box" [@fadeInOut]>
+    <p>{{ message }}</p>
+    <div class="alert-buttons">
+      <button (click)="onConfirm()">Confirmar</button>
+      <button (click)="onCancel()">Cancelar</button>
+    </div>
+  </div>
+</div>
+}

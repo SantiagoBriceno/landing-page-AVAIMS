@@ -5,7 +5,8 @@ import { AdminComponent } from './views/admin/admin.component'
 import { ContactUsPageComponent } from './views/home/contact-us/contact-us-page.component'
 import { HomeComponent } from './views/home/home.component'
 import { MainComponent } from './views/admin/main/main.component'
-import { NoticesAdminComponent } from './views/admin/notices-admin/notices-admin.component'
+import { NoticesAdminFixComponent } from './views/admin/notices-admin-fix/notices-admin-fix.component'
+import { ContactAdminComponent } from './views/admin/contact-admin/contact-admin.component'
 
 export const routes: Routes = [
   {
@@ -18,7 +19,11 @@ export const routes: Routes = [
       },
       {
         path: 'notices',
-        component: NoticesAdminComponent
+        component: NoticesAdminFixComponent
+      },
+      {
+        path: 'contact',
+        component: ContactAdminComponent
       }
     ]
   },

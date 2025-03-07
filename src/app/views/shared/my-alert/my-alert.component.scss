@@ -1,0 +1,61 @@
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.alert-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 400px; /* Ancho fijo para el alert box */
+}
+
+.alert-box p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.alert-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.alert-buttons button {
+  margin: 0 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.alert-buttons button:first-child {
+  background-color: #4CAF50; /* Verde para confirmar */
+  color: white;
+}
+
+.alert-buttons button:first-child:hover {
+  background-color: #45a049;
+}
+
+.alert-buttons button:last-child {
+  background-color: #f44336; /* Rojo para cancelar */
+  color: white;
+}
+
+.alert-buttons button:last-child:hover {
+  background-color: #d32f2f;
+}

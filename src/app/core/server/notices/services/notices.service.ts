@@ -12,13 +12,25 @@ const getLastNotices = async (limit: number): Promise<Notice[]> => {
   return rows as Notice[]
 }
 
+const getNoticeFileById = async (id: number): Promise<any> => {
+  const [rows] = await pool.query('SELECT img FROM notices WHERE id = ?', [id])
+  return rows
+}
+
 const createNotice = async (notice: Notice): Promise<QueryResult> => {
   const [rows] = await pool.query('INSERT INTO notices SET ?', [notice])
+  return rows
+}
+
+const deleteNotice = async (id: number): Promise<QueryResult> => {
+  const [rows] = await pool.query('DELETE FROM notices WHERE id = ?', [id])
   return rows
 }
 
 export default {
   getAllNotices,
   getLastNotices,
-  createNotice
+  getNoticeFileById,
+  createNotice,
+  deleteNotice
 }

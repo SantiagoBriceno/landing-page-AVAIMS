@@ -5,7 +5,7 @@
     </div>
     <div class="news-cards-container flex align-center justify-center">
       @for (notice of notices; track $index) {
-      <my-card [title]="notice.title" [description]="notice.description" [created_at]="notice.date" [img]="notice.img"></my-card>
+      <my-card [title]="notice.title" [notice]="notice"></my-card>
       }
     </div>
 

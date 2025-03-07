@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 
-import { Notice } from '../../../../../core/server/config/models/types'
+import { Notice } from '../../../core/server/config/models/types'
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +16,9 @@ export class NoticeFormService {
 
   updateNotice (notice: Notice): Observable<any> {
     return this.http.put<any>('/api/notices', notice)
+  }
+
+  deleteNotice (id: number): Observable<any> {
+    return this.http.delete<any>(`/api/notices/${id}`)
   }
 }

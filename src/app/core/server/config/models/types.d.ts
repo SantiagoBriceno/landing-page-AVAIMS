@@ -4,6 +4,7 @@ export interface Notice {
   description: string
   date: Date
   img: string
+  url?: string
   created_at?: Date
   updated_at?: Date
 }
