@@ -4,8 +4,7 @@
   "name": "landing-page-avaims",
   "builds": [
     {
-      "src": "dist/landing-page-avaims/server/server.mjs",
-      "use": "@vercel/node"
+      "src": "dist/landing-page-avaims/server/server.mjs"
     }
   ],
   "routes": [
