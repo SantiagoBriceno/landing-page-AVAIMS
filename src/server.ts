@@ -5,7 +5,6 @@ import {
   writeResponseToNodeResponse
 } from '@angular/ssr/node'
 import express from 'express'
-import cors from 'cors'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import noticesRouter from './app/core/server/notices/routes/notices.routes'
@@ -28,8 +27,6 @@ app.use('/api/notices', noticesRouter)
 app.use('/api/sponsor', sponsorRouter)
 
 app.use('/api/contact-us', contactRouter)
-
-app.use(cors())
 
 /**
  * Serve static files from /browser

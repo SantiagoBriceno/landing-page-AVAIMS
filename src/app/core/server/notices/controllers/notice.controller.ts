@@ -10,6 +10,7 @@ export const getAllNotices: RequestHandler = async (_req, res) => {
     const notices: Notice[] = await noticesService.getAllNotices()
     res.status(200).json({ notices })
   } catch (error: any) {
+    console.log(error)
     res.status(500).json({ message: error.message })
   }
 }
@@ -20,6 +21,7 @@ export const getLastNotices: RequestHandler = async (req, res) => {
     const notices: Notice[] = await noticesService.getLastNotices(limit)
     res.status(200).json({ notices })
   } catch (error: any) {
+    console.log(error)
     res.status(500).json({ message: error.message })
   }
 }
@@ -56,6 +58,7 @@ export const createNotice: RequestHandler = async (req, res) => {
 
     return res.json({ title, description, image: image.name })
   } catch (error) {
+    console.log(error)
     return res.json(500).send(error)
   }
 }
