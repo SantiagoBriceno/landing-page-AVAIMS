@@ -1,20 +1,14 @@
 
 .brand-item {
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  border-radius: 50%;
-  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.brand-item:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .brand-item img {
-  width: 80px;
+  width: 250px
+}
+
+.brand-item img:hover {
+  transform: scale(1.1);
 }

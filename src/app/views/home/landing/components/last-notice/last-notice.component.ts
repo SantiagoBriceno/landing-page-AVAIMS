@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { MyCardComponent } from '../../../../shared/card/my-card.component'
 import { LastNoticeService } from './last-notice.service'
-import { Notice } from '../../../../../core/server/config/models/types'
+import { Notice } from '../../../../../../types'
 
 @Component({
   selector: 'app-last-notice',

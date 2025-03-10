@@ -5,11 +5,10 @@ import {
   writeResponseToNodeResponse
 } from '@angular/ssr/node'
 import express from 'express'
+import fileUpload from 'express-fileupload'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import noticesRouter from './app/core/server/notices/routes/notices.routes'
-import sponsorRouter from './app/core/server/sponsor/routes/sponsor.routes'
-import contactRouter from './app/core/server/contact/routes/contact.routes'
+import { saveNoticeImages } from './app/core/controller/notice.controller'
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url))
 const browserDistFolder = resolve(serverDistFolder, '../browser')
@@ -17,16 +16,19 @@ const browserDistFolder = resolve(serverDistFolder, '../browser')
 const app = express()
 const angularApp = new AngularNodeAppEngine()
 
-app.get('/api/**', (req, res, next) => {
+app.use('/api/**', (req, res, next) => {
   next()
-  // Validaciones
 })
 
-app.use('/api/notices', noticesRouter)
+app.post('/api/notices', fileUpload({
+  createParentPath: true
+}),
+saveNoticeImages
+)
 
-app.use('/api/sponsor', sponsorRouter)
+// app.use('/api/sponsor', sponsorRouter)
 
-app.use('/api/contact-us', contactRouter)
+// app.use('/api/contact-us', contactRouter)
 
 /**
  * Serve static files from /browser

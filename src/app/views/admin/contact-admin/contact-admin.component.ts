@@ -1,11 +1,29 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { Contact } from '../../../../types'
+import { DatePipe } from '@angular/common'
+import { ContactAdminService } from './contact-admin.service'
 
 @Component({
   selector: 'app-contact-admin',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './contact-admin.component.html',
   styleUrl: './contact-admin.component.scss'
 })
 export class ContactAdminComponent {
+  public messages: Contact[] = []
+  public selectedMessage: Contact | null = null
 
+  constructor (private readonly contactAdminService: ContactAdminService) {
+
+  }
+
+  ngOnInit (): void {
+    this.contactAdminService.getAllContacts().subscribe((response) => {
+      this.messages = response.contacts
+    })
+  }
+
+  showMessageDetails (message: Contact): void {
+    this.selectedMessage = message
+  }
 }

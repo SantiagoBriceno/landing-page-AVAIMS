@@ -37,3 +37,17 @@ export const slideInLeft =
       animate('800ms ease-in-out', style({ transform: 'translateX(-100%)', opacity: 0 }))
     ])
   ])
+
+export const slideInRightDelay = trigger('slideInRight', [
+  state('initial', style({ transform: 'translateX(100%)', opacity: 0 })),
+  state('final', style({ transform: 'translateX(0)', opacity: 1 })),
+  transition('initial => final', animate('800ms ease-in-out')),
+  transition('final => initial', animate('800ms ease-in-out'))
+])
+
+export const slideInLeftDelay = trigger('slideInLeft', [
+  state('initial', style({ transform: 'translateX(-100%)', opacity: 0 })),
+  state('final', style({ transform: 'translateX(0)', opacity: 1 })),
+  transition('initial => final', animate('800ms ease-in-out')),
+  transition('final => initial', animate('800ms ease-in-out'))
+])

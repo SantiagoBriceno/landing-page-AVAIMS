@@ -1,5 +1,6 @@
-<div #brandContainer class="brand-item" [@fadeIn]="animationState" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-  <a href="#">
+<div #brandContainer class="brand-item" [title]="brand.title" [@fadeIn]="animationState" (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()">
+  <a target="_blank" [href]="brand.url">
     <img class="brand" [src]="brand.img" />
   </a>
 </div>

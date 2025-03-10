@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { Notice } from '../../../../core/server/config/models/types'
+import { Notice } from '../../../../../types'
 import { DatePipe } from '@angular/common'
 import { MyAlertComponent } from '../../../shared/my-alert/my-alert.component'
 
@@ -14,20 +14,20 @@ import { MyAlertComponent } from '../../../shared/my-alert/my-alert.component'
 })
 export class CardAdminComponent {
   @Input() notice: Notice = {
-    id: 0,
+    id: '',
     title: '',
     description: '',
     img: '',
     date: new Date()
   }
 
-  @Output() deleteId: EventEmitter<number> = new EventEmitter<number>()
+  @Output() deleteId: EventEmitter<string> = new EventEmitter<string>()
 
   showAlert: boolean = false
   deleteMessageAlert: string = '¿Estás seguro de eliminar la noticia?'
-  selectedId: number = 0
+  selectedId: string = ''
 
-  handleDelete (id: number): void {
+  handleDelete (id: string): void {
     this.showAlert = true
     this.selectedId = id
   }

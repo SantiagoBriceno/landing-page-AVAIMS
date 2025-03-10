@@ -1,1 +1,23 @@
-<p>contact-admin works!</p>
+<div class="message-list-container">
+  <ul class="message-list">
+    @for (message of messages; track $index) {
+    <li (click)="showMessageDetails(message)">
+      {{ message.affair }} - {{ message.name }} {{ message.last_name }}
+    </li>
+    }
+
+  </ul>
+
+  @if (selectedMessage) {
+  <div class="message-details">
+    <h2>Detalles del mensaje</h2>
+    <p><strong>Asunto:</strong> {{ selectedMessage.affair }}</p>
+    <p><strong>Nombre:</strong> {{ selectedMessage.name }} {{ selectedMessage.last_name }}</p>
+    <p><strong>Email:</strong> {{ selectedMessage.email }}</p>
+    <p><strong>Teléfono:</strong> {{ selectedMessage.phone }}</p>
+    <p><strong>Mensaje:</strong> {{ selectedMessage.message }}</p>
+    <p><strong>Fecha de creación:</strong> {{ selectedMessage.created_at | date: 'fullDate' }}</p>
+  </div>
+  }
+
+</div>

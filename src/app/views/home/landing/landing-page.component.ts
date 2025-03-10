@@ -4,6 +4,7 @@ import { LastNoticeComponent } from './components/last-notice/last-notice.compon
 import { CarrouselComponent } from '../../shared/carrousel/carrousel.component'
 import { ContactUsComponent } from './components/contact-us/contact-us.component'
 import { OurSponsorsComponent } from './components/our-sponsors/our-sponsors.component'
+import { RelationsComponent } from './components/relations_prop/relations_aux.component'
 
 @Component({
   selector: 'app-landing-page',
@@ -13,7 +14,8 @@ import { OurSponsorsComponent } from './components/our-sponsors/our-sponsors.com
     LastNoticeComponent,
     CarrouselComponent,
     ContactUsComponent,
-    OurSponsorsComponent
+    OurSponsorsComponent,
+    RelationsComponent
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'

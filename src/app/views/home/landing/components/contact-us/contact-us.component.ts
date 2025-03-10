@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { LogoComponent } from '../../../../shared/logo/logo.component'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
-import { Contact } from '../../../../../core/server/config/models/types'
+import { Contact } from '../../../../../../types'
 import { ContactUsService } from './contact-us.service'
 
 @Component({

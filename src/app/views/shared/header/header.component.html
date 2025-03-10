@@ -7,24 +7,27 @@
         <ul>
           <li><a routerLink="/home/" routerLinkActive="activeLink" [routerLinkActiveOptions]="{exact: true}"
               ariaCurrentWhenActive="page">Inicio</a></li>
-
-          <li><a routerLink="/home/notices" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Noticias</a></li>
           <li>
             <app-dropdown buttonText="Nosotros" [options]="dropDownLink"></app-dropdown>
           </li>
+          <li><a routerLink="/home/notices" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Noticias</a></li>
           <li><a routerLink="/home/contact-us" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Contacto</a>
           </li>
         </ul>
       </div>
       <div class="container-social">
         <button class="my-button-only-icon header-component">
-          <i class="fa-brands fa-facebook"></i>
+          <a target="_blank" title="Avaims" href="https://www.facebook.com/arquitecturaeingenieriamedicosanitaria	">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
         </button>
         <button class="my-button-only-icon header-component">
-          <i class="fa-brands fa-instagram"></i>
+          <a target="_blank" href="https://www.instagram.com/avaims.venezuela/">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </button>
         <button class="my-button-only-icon header-component">
-          <i class="fa-regular fa-envelope"></i>
+          <a target="_blank" href="https://twitter.com/avaimsoficial"><i class="fa-brands fa-x-twitter"></i></a>
         </button>
       </div>
     </div>

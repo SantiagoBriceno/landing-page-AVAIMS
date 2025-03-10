@@ -1,14 +1,15 @@
 .our-sponsors-container {
+  margin-top: 3rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 50px;
 }
 
 .brand-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  gap: 3rem;
 }

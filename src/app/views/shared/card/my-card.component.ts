@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, Inject, Input, PLATFORM_ID, ViewC
 import { DatePipe, isPlatformBrowser } from '@angular/common'
 import { fadeIn } from '../animations/animation'
 import { NoticeFormService } from '../../admin/notices-admin-fix/notices-admin.service'
-import { Notice } from '../../../core/server/config/models/types'
+import { Notice } from '../../../../types'
 
 @Component({
   selector: 'my-card',

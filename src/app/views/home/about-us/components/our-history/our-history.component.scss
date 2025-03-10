@@ -1,0 +1,26 @@
+.our-history-content {
+  width: 80%;
+  margin: 0 auto;
+
+  .our-history-description {
+    width: 50%;
+
+    h1 {
+      letter-spacing: .5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: justify;
+    }
+  }
+
+  .our-history-img-container {
+    width: 50%;
+
+    img {
+      height: 500px;
+    }
+  }
+}

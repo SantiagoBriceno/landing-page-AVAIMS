@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core'
-import { Sponsor } from '../../../core/server/config/models/types'
+import { Sponsor } from '../../../../types'
 import { fadeIn } from '../animations/animation'
 import { isPlatformBrowser } from '@angular/common'
 
@@ -14,7 +14,7 @@ import { isPlatformBrowser } from '@angular/common'
 export class BrandContainerComponent implements AfterViewInit {
   @Input() brand: Sponsor = {
     description: '',
-    id: 0,
+    id: '',
     img: '',
     title: '',
     url: ''

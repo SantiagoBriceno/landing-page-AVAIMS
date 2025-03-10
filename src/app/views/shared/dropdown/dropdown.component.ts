@@ -19,6 +19,11 @@ export class DropdownComponent {
     this.isOpen = !this.isOpen
   }
 
+  selectOption (link: string): void {
+    console.log('Navigating to', link)
+    this.isOpen = false
+  }
+
   @HostListener('document:click', ['$event'])
   clickOutside (event: Event): void {
     const target = event.target as HTMLElement

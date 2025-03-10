@@ -3,7 +3,7 @@
   @if (isOpen) {
   <div class="dropdown-content">
     @for (option of options; track $index) {
-    <a [routerLink]="option.link" routerLinkActive="activeLink" ariaCurrentWhenActive="page">
+    <a [routerLink]="option.link" routerLinkActive="activeLink" ariaCurrentWhenActive="page" (click)="selectOption(option.link)">
       {{ option.label }}
     </a>}
 

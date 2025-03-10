@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { MainService } from './main.service'
-import { Notice, Sponsor } from '../../../core/server/config/models/types'
+import { Notice, Sponsor } from '../../../../types'
 import { NoticeFormService } from '../notices-admin-fix/notices-admin.service'
 import { CardAdminComponent } from '../components/card-admin/card-admin.component'
 
@@ -38,7 +38,7 @@ export class MainComponent implements OnInit {
     })
   }
 
-  onDeleteNotice (id: number): void {
+  onDeleteNotice (id: string): void {
     this.noticeFormService.deleteNotice(id).subscribe(() => {
       this.notices = this.notices.filter((notice) => notice.id !== id)
     },

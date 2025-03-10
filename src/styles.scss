@@ -109,11 +109,13 @@ body {
   cursor: pointer;
 }
 
-.my-button-only-icon i {
+.my-button-only-icon a {
+  color: $texto-principal;
+  text-decoration: none;
   font-size: 1.2rem;
 }
 
-.my-button-only-icon i:hover {
+.my-button-only-icon a:hover {
   color: $color-hover;
 }
 
@@ -126,9 +128,30 @@ body {
   overflow-x: hidden;
 }
 
+.super-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 1rem;
+}
+
 .title {
   font-size: 2.5rem;
   font-weight: 500;
   color: #333;
   margin-top: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.divider {
+  width: 90%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 1rem 0;
 }

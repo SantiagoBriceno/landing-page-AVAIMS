@@ -1,0 +1,66 @@
+.our-mision-content {
+  height: 100%;
+  background-image: url('../../../../../../../public/images/assets/render-avaims.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(29, 27, 27, 0.8);
+  /* Color de filtro (azul semi-transparente) */
+  background-blend-mode: multiply;
+  color: #f4f6f1;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+
+  .our-mision-description {
+    width: 50%;
+  }
+
+  h1 {
+    color: #f4f6f1;
+    letter-spacing: .5rem;
+    margin-bottom: .5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    /* Inicialmente desplazado hacia arriba */
+    animation: fadeInText 1s ease-in-out forwards;
+    /* Animación de aparición */
+    animation-delay: 0.5s;
+    /* Retraso para que aparezca después del contenedor */
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(20px);
+    /* Inicialmente desplazado hacia arriba */
+    animation: fadeInText 1s ease-in-out forwards;
+    /* Animación de aparición */
+    animation-delay: 1s;
+    /* Retraso para que aparezca después del h1 */
+
+    span {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #4577ff
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    /* Aparece */
+  }
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+    /* Aparece */
+    transform: translateY(0);
+    /* Se coloca en su posición */
+  }
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-join-us',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './join-us.component.scss'
 })
 export class JoinUsComponent {
-
+  public planillaUrl = 'URL_DIRECTA_DE_TU_PLANILLA'
 }

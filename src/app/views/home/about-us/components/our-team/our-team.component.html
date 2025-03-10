@@ -1,0 +1,12 @@
+<section class="our-team-container">
+  <div class="our-team-content">
+    <h1 class="title">Comisión directiva</h1>
+    <ul>
+      @for (person of team; track $index) {
+      <li class="team-item">
+        <p>{{person.role}}: {{person.prof}}. {{person.name}}</p>
+      </li>
+      }
+    </ul>
+  </div>
+</section>

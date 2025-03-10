@@ -4,11 +4,12 @@ import { NoticeFormService } from './notices-admin.service'
 import { ToastService } from '../../shared/toast/toast.service'
 import { Router } from '@angular/router'
 import { MyCardComponent } from '../../shared/card/my-card.component'
-import { Notice } from '../../../core/server/config/models/types'
+import { Notice } from '../../../../types'
+import { ToastComponent } from '../../shared/toast/toast.component'
 
 @Component({
   selector: 'app-notices-admin-fix',
-  imports: [ReactiveFormsModule, MyCardComponent],
+  imports: [ReactiveFormsModule, MyCardComponent, ToastComponent],
   templateUrl: './notices-admin-fix.component.html',
   styleUrl: './notices-admin-fix.component.scss'
 })
@@ -59,19 +60,26 @@ export class NoticesAdminFixComponent implements OnInit {
     if (!this.noticeForm.valid) {
       return
     }
-    const formData = new FormData()
-    formData.append('title', this.noticeForm.value.title)
-    formData.append('description', this.noticeForm.value.description)
-    formData.append('date', this.noticeForm.value.date)
-    formData.append('img', this.noticeForm.value.img, this.noticeForm.value.img.name)
 
-    this.noticeFormService.createNotice(formData).subscribe((response) => {
-      console.log(response)
-      this.toastService.showToast('Noticia creada correctamente', 'success', 3000)
-      void this.router.navigate(['/admin'])
-    },
-    (error) => {
-      console.log(error)
+    const newNotice: Notice = {
+      title: this.noticeForm.value.title,
+      description: this.noticeForm.value.description,
+      date: this.noticeForm.value.date,
+      url: this.noticeForm.value.url,
+      img: this.noticeForm.value.img
+    }
+
+    this.noticeFormService.saveNoticeImages(this.noticeForm.value.img).subscribe((response) => {
+      const { image } = response
+      console.log('Imagen subida correctamente')
+      newNotice.img = image
+      this.noticeFormService.createNotice(newNotice).subscribe((response) => {
+        console.log(response)
+        this.toastService.showToast('Noticia creada correctamente', 'success', 3000)
+        void this.router.navigate(['/admin'])
+      })
     })
+
+    console.log(newNotice)
   }
 }
