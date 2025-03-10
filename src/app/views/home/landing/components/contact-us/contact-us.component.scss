@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-bottom: 1rem;
 }
 
 form {
@@ -77,6 +78,10 @@ form {
   .contact-us-container {
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .spacing {
+    margin-bottom: 1.5rem;
   }
 
   .form-wrapper {

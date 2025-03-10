@@ -12,4 +12,32 @@
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .brand-container {
+    gap: 1rem;
+  }
+
+  .brand-container img {
+    width: 100px;
+  }
+
+  .our-sponsors-container {
+    margin-top: 1rem;
+  }
+
+  .our-sponsors-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .our-sponsors-container p {
+    font-size: 1rem;
+  }
+
+  .our-sponsors-container .brand-container {
+    gap: 1rem;
+  }
+
 }

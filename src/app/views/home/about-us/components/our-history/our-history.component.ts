@@ -12,6 +12,8 @@ export class OurHistoryComponent implements AfterViewInit {
   animationState: string = 'initial'
   @ViewChild('slideRight') slideRight!: ElementRef
   @ViewChild('slideLeft') slideLeft!: ElementRef
+  isMobile: boolean = false
+
   constructor (@Inject(PLATFORM_ID) private readonly platformId: Object) {
   }
 

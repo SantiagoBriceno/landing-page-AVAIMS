@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
+import { Component, HostListener } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
 @Component({
@@ -10,11 +10,17 @@ import { RouterModule } from '@angular/router'
   styleUrl: './sidebar-mobile.component.scss'
 })
 export class SidebarMobileComponent {
-  @Input() isOpen: boolean = false
-  @Output() close = new EventEmitter<void>()
+  isOpen: boolean = false
+  toggleSidebar (): void {
+    console.log('Toggling sidebar')
+    this.isOpen = !this.isOpen
+  }
 
-  closeSidebar (): void {
-    console.log('closeSidebar')
-    this.close.emit()
+  @HostListener('document:click', ['$event'])
+  clickOutside (event: Event): void {
+    const target = event.target as HTMLElement
+    if (target.closest('.mobile-sidebar') == null) {
+      this.isOpen = false
+    }
   }
 }

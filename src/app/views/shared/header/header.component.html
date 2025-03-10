@@ -1,4 +1,4 @@
-<header #content class="header-container flex" [@slideDown]="animationState">
+<header #content class="header-container flex" [class.mobile]="isMobile" [@slideDown]="animationState">
   <nav class="nav-container flex justify-between align-center">
     <app-logo></app-logo>
     @if (!isMobile) {
@@ -33,11 +33,9 @@
     </div>
     }
     @else {
-    <button (click)="toggleSidebar()" class="my-button-only-icon header-component" aria-label="item-list">
-      <i class="fa-solid fa-ellipsis-vertical"></i>
-    </button>
+    <div>
+      <app-sidebar-mobile></app-sidebar-mobile>
+    </div>
     }
   </nav>
 </header>
-
-<app-sidebar-mobile (close)="toggleSidebar()" [isOpen]="isOpen"></app-sidebar-mobile>
