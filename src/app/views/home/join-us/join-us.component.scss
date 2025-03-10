@@ -1,83 +1,106 @@
 .admision {
   background-color: #f8f8f8;
-  padding: 0px 0 50px 0 ;
+  padding: 0px 0 50px 0;
+}
 
-  .admision-title {
-    text-align: center;
-    background-image: url('../../../../../public/images/assets/render-avaims.jpg');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(29, 27, 27, 0.8);
-    /* Color de filtro (azul semi-transparente) */
-    background-blend-mode: multiply;
-    color: #f4f6f1;
-    padding: 50px 0;
-    display: flex;
-    justify-content: center;
-    background-repeat: no-repeat;
-    .content{
-      width: 50%;
-    }
-  }
+.admision .admision-title {
+  text-align: center;
+  background-image: url('../../../../../public/images/assets/render-avaims.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(29, 27, 27, 0.8);
+  background-blend-mode: multiply;
+  color: #f4f6f1;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  animation: fadeIn 1s ease-in-out forwards;
+  /* Animación FadeIn */
+  opacity: 0;
+  /* Inicialmente oculto */
+}
 
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
+.admision .admision-title .content {
+  width: 50%;
+}
 
-    h2 {
-      font-size: 2rem; // Ajustado a 2rem
-      margin-bottom: 20px;
-      text-align: center;
-      color: #333;
-    }
+.admision .admision-title .content h1,
+.admision .admision-title .content p {
+  opacity: 0;
+  /* Inicialmente oculto */
+}
 
-    p {
-      font-size: 1rem; // Ajustado a 1rem
-      line-height: 1.6;
-      margin-bottom: 30px;
-      color: #555;
-    }
+.admision .admision-title .content h1 {
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+  /* Animación FadeIn con retraso */
+}
 
-    .requisitos,
-    .documentacion {
-      margin-bottom: 30px;
+.admision .admision-title .content p {
+  animation: fadeIn 1s ease-in-out 1s forwards;
+  /* Animación FadeIn con retraso */
+}
 
-      h3 {
-        font-size: 1.3rem; // Ajustado a 1.3rem
-        margin-bottom: 15px;
-        color: #333;
-      }
+.admision .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-      ul {
-        list-style: disc;
-        margin-left: 20px;
+.admision .container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
 
-        li {
-          font-size: 1rem; // Ajustado a 1rem
-          line-height: 1.6;
-          color: #555;
-        }
-      }
-    }
+.admision .container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
+}
 
-    .descargar-planilla {
-      background-color: #007bff;
-      color: white;
-      padding: 12px 25px; // Ligeramente reducido
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem; // Ajustado a 1rem
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
+.admision .container .requisitos,
+.admision .container .documentacion {
+  margin-bottom: 30px;
+}
 
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
-  }
+.admision .container .requisitos h3,
+.admision .container .documentacion h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.admision .container .requisitos ul,
+.admision .container .documentacion ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.admision .container .requisitos ul li,
+.admision .container .documentacion ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.admision .container .descargar-planilla {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.admision .container .descargar-planilla:hover {
+  background-color: #0056b3;
 }
 
 /* Estilos responsivos */
@@ -93,5 +116,16 @@
         font-size: 0.9rem; // Ajustado para pantallas pequeñas
       }
     }
+  }
+}
+
+/* Keyframes para la animación FadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

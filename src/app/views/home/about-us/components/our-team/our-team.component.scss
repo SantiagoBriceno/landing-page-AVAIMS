@@ -4,6 +4,7 @@
 }
 
 .our-team-content {
+    width: 100%;
     ul {
         list-style: none;
         padding: 0;
@@ -13,4 +14,8 @@
     li {
         margin-bottom: .5rem;
     }
+}
+
+.title{
+    margin: 0;
 }

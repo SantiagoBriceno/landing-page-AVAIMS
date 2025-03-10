@@ -16,7 +16,7 @@ export class OurTeamComponent {
     {
       prof: 'Arq',
       name: 'Fabiola Panitz',
-      role: 'VicePresidente'
+      role: 'Vicepresidente'
     },
     {
       prof: 'Arq',
