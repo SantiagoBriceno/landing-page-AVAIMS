@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 $background-principal: #F5F5F5;
 $background-secundario: #1C1C1C;
+$background-terciario: #60615f;
 $texto-principal: #363636;
 $texto-secundario: #f4f6f1; // Color contrastante para el fondo secundario
 $color-principal: #45abff;
@@ -62,7 +63,7 @@ body {
   gap: 1.5rem;
 }
 
-.wrap{
+.wrap {
   flex-wrap: wrap;
 }
 
@@ -77,6 +78,11 @@ body {
 .secondary-container {
   background-color: $background-secundario;
   color: $texto-secundario;
+}
+
+.tertiary-container {
+  background-color: #f4f6f1;
+  color: $texto-principal;
 }
 
 .half-width {

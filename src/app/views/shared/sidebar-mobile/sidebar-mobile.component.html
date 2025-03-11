@@ -9,26 +9,29 @@
       </h1>
     </div>
     <div class="sidebar-content">
-      <ul class="sidebar-list">
-        <li class="sidebar-item ">
-          <a class="sidebar-link flex semi-grouper" routerLink="/home/" [routerLinkActiveOptions]="{exact:true}"
-            routerLinkActive="active">
-            <i class="fa fa-home"></i>
-            <span class="sidebar-text">Inicio</span>
-          </a>
+      <ul>
+        <li>
+          <a routerLink="/home" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"
+            (click)="toggleSidebar()">Home</a>
         </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" routerLink="/about-us/our-history">
-            <i class="fa fa-info-circle"></i>
-            <span class="sidebar-text">About</span>
-          </a>
+        <li class="has-submenu">
+          <a routerLink="/home/about-us/our-history" routerLinkActive="active" (click)="toggleSidebar()">nosotros</a>
+          <ul class="submenu">
+            <li>
+              <a href="">Nuestra historia</a>
+            </li>
+            <li>
+              <a href="">
+                Únetenos
+              </a>
+            </li>
+          </ul>
         </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" routerLink="/home/contact-us" [routerLinkActiveOptions]="{exact:true}"
-            routerLinkActive="active">
-            <i class="fa fa-envelope"></i>
-            <span class="sidebar-text">contáctanos</span>
-          </a>
+        <li>
+          <a routerLink="/home/contact-us" routerLinkActive="active" (click)="toggleSidebar()">Contactanos</a>
+        </li>
+        <li>
+          <a routerLink="/home/notices" routerLinkActive="active" (click)="toggleSidebar()">Noticias</a>
         </li>
       </ul>
     </div>

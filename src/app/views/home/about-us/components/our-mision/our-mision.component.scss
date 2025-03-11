@@ -64,3 +64,52 @@
     /* Se coloca en su posición */
   }
 }
+
+@media screen and (max-width: 768px) {
+  .our-mision-content {
+    padding: 1rem;
+    background-color: rgba(29, 27, 27, 0.8);
+    /* Color de filtro (azul semi-transparente) */
+    background-blend-mode: multiply;
+    color: #f4f6f1;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+
+    .our-mision-description {
+      width: 100%;
+    }
+
+    h1 {
+      color: #f4f6f1;
+      letter-spacing: .5rem;
+      margin-bottom: .5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      /* Inicialmente desplazado hacia arriba */
+      animation: fadeInText 1s ease-in-out forwards;
+      /* Animación de aparición */
+      animation-delay: 0.5s;
+      /* Retraso para que aparezca después del contenedor */
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(20px);
+      /* Inicialmente desplazado hacia arriba */
+      animation: fadeInText 1s ease-in-out forwards;
+      /* Animación de aparición */
+      animation-delay: 1s;
+      /* Retraso para que aparezca después del h1 */
+
+      span {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #4577ff
+      }
+    }
+  }
+
+}

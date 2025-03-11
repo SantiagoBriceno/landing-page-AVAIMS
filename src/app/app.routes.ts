@@ -8,6 +8,7 @@ import { MainComponent } from './views/admin/main/main.component'
 import { NoticesAdminFixComponent } from './views/admin/notices-admin-fix/notices-admin-fix.component'
 import { ContactAdminComponent } from './views/admin/contact-admin/contact-admin.component'
 import { JoinUsComponent } from './views/home/join-us/join-us.component'
+import { NoticesComponent } from './views/home/notices/notices.component'
 
 export const routes: Routes = [
   {
@@ -47,6 +48,10 @@ export const routes: Routes = [
       {
         path: 'contact-us',
         component: ContactUsPageComponent
+      },
+      {
+        path: 'notices',
+        component: NoticesComponent
       }
     ]
   },

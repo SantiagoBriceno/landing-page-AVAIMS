@@ -87,10 +87,10 @@ export class OurTeamComponent implements AfterViewInit {
         slidesPerView: 3
       }
     },
-    autoplay: {
-      delay: 4500,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 4500,
+    //   disableOnInteraction: false
+    // },
     effect: 'slide',
     navigation: {
       enabled: true

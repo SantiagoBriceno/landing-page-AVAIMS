@@ -29,9 +29,6 @@ export class CarrouselComponent implements AfterViewInit {
       disableOnInteraction: false
     },
     effect: 'fade',
-    navigation: {
-      enabled: true
-    },
     fadeEffect: {
       crossFade: true
     },

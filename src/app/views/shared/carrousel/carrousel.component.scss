@@ -13,3 +13,29 @@
     border-radius: 10px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .carrousel-container {
+    swiper-slide img {
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .carrousel-container {
+    swiper-slide img {
+      height: 200px;
+    }
+  }
+
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #007bff;
+  /* Cambia el color del icono */
+  font-size: 1.5rem;
+  /* Cambia el tamaño del icono */
+  /* Otros estilos... */
+}
