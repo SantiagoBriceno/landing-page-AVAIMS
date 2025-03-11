@@ -1,4 +1,4 @@
-<div class="carrousel-container">
+<!-- <div class="carrousel-container">
   <div class="carrousel-content" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
     @for (item of items; track $index) {
     <div class="carrousel-item">
@@ -14,4 +14,12 @@
       <i class="fa-solid fa-chevron-right"></i>
     </button>
   </div>
-</div>
+</div> -->
+<swiper-container #bigSwiper class="carrousel-container" navigation="true" pagination="true" lazy="true" loop="true"
+  autoplay="true" speed="1000" effect="fade">
+  @for (item of items; track $index) {
+  <swiper-slide>
+    <img [src]="item" alt="carrousel image" />
+  </swiper-slide>
+  }
+</swiper-container>

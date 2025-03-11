@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core'
+import { isPlatformBrowser } from '@angular/common'
+import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core'
+import { SwiperContainer } from 'swiper/element'
+import { SwiperOptions } from 'swiper/types'
 
 interface Logo {
   title: string
@@ -11,9 +14,10 @@ interface Logo {
   selector: 'app-relations_aux',
   templateUrl: './relations_aux.component.html',
   styleUrls: ['./relations_aux.component.scss'],
-  standalone: true
+  standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class RelationsComponent implements OnInit {
+export class RelationsComponent implements AfterViewInit {
   public logos: Logo[] = [
     {
       title: 'IFHE',
@@ -86,30 +90,55 @@ export class RelationsComponent implements OnInit {
     }
   ]
 
-  visibleLogos: Logo[] = []
-  currentIndex = 0
-  startIndex = 0
-  visibleCount = 5
+  @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>
 
-  ngOnInit (): void {
-    this.updateVisibleLogos()
+  swiperOptions: SwiperOptions = {
+    modules: [],
+    slidesPerView: 1,
+    breakpoints: {
+      640: {
+        slidesPerView: 3
+      },
+      1024: {
+        slidesPerView: 5
+      }
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    effect: 'slide',
+    cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94
+    },
+    navigation: {
+      enabled: true
+    },
+    loop: true,
+    fadeEffect: {
+      crossFade: true
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    on: {
+      init () {
+        // ...
+      }
+    }
   }
 
-  prev (): void {
-    this.startIndex = (this.startIndex - 1 + this.logos.length) % this.logos.length
-    this.updateVisibleLogos()
+  constructor (@Inject(PLATFORM_ID) private readonly platformId: any) {
   }
 
-  next (): void {
-    this.startIndex = (this.startIndex + 1) % this.logos.length
-    this.updateVisibleLogos()
-  }
-
-  updateVisibleLogos (): void {
-    this.visibleLogos = []
-    for (let i = 0; i < this.visibleCount; i++) {
-      const index = (this.startIndex + i) % this.logos.length
-      this.visibleLogos.push(this.logos[index])
+  ngAfterViewInit (): void {
+    if (isPlatformBrowser(this.platformId)) {
+      Object.assign(this.swiper.nativeElement, this.swiperOptions)
+      this.swiper.nativeElement.initialize()
     }
   }
 }
