@@ -23,23 +23,15 @@ export class CarrouselComponent implements AfterViewInit {
   swiperOptions: SwiperOptions = {
     modules: [],
     slidesPerView: 1,
-    breakpoints: {
-      640: {
-        slidesPerView: 1
-      },
-      1024: {
-        slidesPerView: 1
-      }
-    },
+    speed: 1000,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false
     },
-    effect: 'slide',
+    effect: 'fade',
     navigation: {
       enabled: true
     },
-    loop: true,
     fadeEffect: {
       crossFade: true
     },

@@ -1,21 +1,72 @@
-.our-team-container {
+.our-team-container{
+    padding: 0rem 3rem;;
+}
+.card {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e0e0e0;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
 }
 
-.our-team-content {
-    width: 100%;
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    li {
-        margin-bottom: .5rem;
-    }
+.card-content{
+    text-align: center;
 }
 
-.title{
+h2 {
+    padding: 0;
     margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.not-vocals {
+    gap: .2rem;
+
+    // LA primera p que aparezca contenida en not-vocals tendra un border-bottom solid
+
+
+}
+
+.name {
+    font-size: 1rem;
+}
+
+
+.position {
+    font-weight: 500;
+    font-size: .8rem;
+}
+
+.vocals{
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+    width: 100px;
+    margin-top: 1rem;
+    align-items: flex-end
+}
+
+
+ul li p {
+    margin: 0;
+    padding: 0;
 }

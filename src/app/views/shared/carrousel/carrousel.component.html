@@ -15,8 +15,7 @@
     </button>
   </div>
 </div> -->
-<swiper-container #bigSwiper class="carrousel-container" navigation="true" pagination="true" lazy="true" loop="true"
-  autoplay="true" speed="1000" effect="fade">
+<swiper-container #bigSwiper class="carrousel-container" init="false">
   @for (item of items; track $index) {
   <swiper-slide>
     <img [src]="item" alt="carrousel image" />

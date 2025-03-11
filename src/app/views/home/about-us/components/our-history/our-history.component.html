@@ -1,12 +1,4 @@
 <section class="our-history-content flex grouper">
-  <div #slideLeft class="our-history-img-container" [@slideInRight]="animationState">
-    <div class="flex column container">
-      <img src="images/AvaimsTeam.jpg" alt="company-img" />
-      <!-- Aqui pondremos una lista con el equipo -->
-      <app-our-team></app-our-team>
-    </div>
-
-  </div>
   <div #slideRight class="our-history-description flex column slide-right" [@slideInLeft]="animationState">
     <h1>
       Nuestra historia
@@ -31,8 +23,11 @@
       sector público como privado deben integrarse.Dentro de las estrategias fundamentales de acción se logran los
       objetivos en el desarrollo de varias comisiones.
     </p>
-    <p>
+  </div>
+  <div #slideLeft class="our-history-img-container" [@slideInRight]="animationState">
+    <div class="flex column container">
+      <img src="images/AvaimsTeam.jpg" alt="company-img" />
+    </div>
 
-    </p>
   </div>
 </section>

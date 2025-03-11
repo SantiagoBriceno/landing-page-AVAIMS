@@ -1,8 +1,13 @@
 .our-history-content {
   align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+
   .our-history-description {
-    width: 80%;
+    width: 50%;
 
     h1 {
       letter-spacing: .5rem;
@@ -19,11 +24,62 @@
 
   .our-history-img-container {
     img {
-      height:200px;
+      height: 450px;
     }
   }
 }
 
-.container{
+.container {
   justify-items: flex-start;
+}
+
+@media screen and (max-width: 992px) {
+  .our-history-content {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .our-history-description {
+      width: 100%;
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .our-history-content {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .our-history-description {
+      width: 100%;
+      text-align: center;
+    }
+
+    .our-history-img-container {
+      justify-content: center;
+      align-items: center;
+
+      img {
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .our-history-content {
+    .our-history-description {
+      h1 {
+        font-size: 1.5rem;
+        letter-spacing: .3rem;
+      }
+
+      p {
+        font-size: .8rem;
+      }
+    }
+  }
+
 }

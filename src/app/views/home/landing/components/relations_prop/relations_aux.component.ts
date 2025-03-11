@@ -108,16 +108,9 @@ export class RelationsComponent implements AfterViewInit {
       disableOnInteraction: false
     },
     effect: 'slide',
-    cubeEffect: {
-      shadow: true,
-      slideShadows: true,
-      shadowOffset: 20,
-      shadowScale: 0.94
-    },
     navigation: {
       enabled: true
     },
-    loop: true,
     fadeEffect: {
       crossFade: true
     },
