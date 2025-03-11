@@ -1,124 +1,15 @@
 .carrousel-container {
-  position: relative;
-  width: 100%;
-  /* Ajusta el ancho máximo según sea necesario */
-  margin: auto;
-  overflow: hidden;
-  /* Oculta el contenido que se desborda */
-  border-radius: 10px;
-  /* Bordes redondeados */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  /* Sombra para un efecto moderno */
-}
+  swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+  }
 
-.carrousel-content {
-  display: flex;
-  transition: transform 0.5s ease;
-  /* Transición suave al cambiar de imagen */
-}
-
-.carrousel-item {
-  min-width: 100%;
-  /* Cada item ocupa el 100% del contenedor */
-  box-sizing: border-box;
-  /* Incluye padding y border en el ancho total */
-  height: 600px;
-  /* Establece una altura fija para el contenedor de imágenes */
-  display: flex;
-  /* Permite centrar la imagen */
-  justify-content: center;
-  /* Centra horizontalmente */
-  align-items: center;
-  /* Centra verticalmente */
-}
-
-.carrousel-item img {
-  width: 100%;
-  /* La imagen ocupa todo el ancho del item */
-  height: 100%;
-  /* La imagen ocupa toda la altura del item */
-  object-fit: cover;
-  /* Mantiene la proporción de la imagen y la recorta si es necesario */
-  border-radius: 10px;
-  /* Bordes redondeados para las imágenes */
-}
-
-.carrousel-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  /* Asegura que los botones estén en los extremos */
-  transform: translateY(-50%);
-  /* Centra verticalmente los controles */
-  /* Espaciado lateral */
-}
-
-.carrousel-controls button {
-  background-color: rgba(255, 255, 255, 0.7);
-  /* Fondo semi-transparente */
-  border: none;
-  border-radius: 50%;
-  /* Botones redondeados */
-  padding: 0.5rem;
-  /* Espaciado interno */
-  cursor: pointer;
-  /* Cambia el cursor al pasar sobre el botón */
-  transition: background-color 0.3s;
-  /* Transición suave para el fondo */
-  margin: 1rem;
-  /* Asegúrate de que no haya márgenes adicionales */
-}
-
-.carrousel-controls button:hover {
-  background-color: rgba(255, 255, 255, 1);
-  /* Fondo opaco al pasar el mouse */
-}
-
-.carrousel-controls mat-icon {
-  font-size: 24px;
-  /* Tamaño del icono */
-  color: #333;
-  /* Color del icono */
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 10px;
-  /* Ajusta la posición vertical según sea necesario */
-  left: 50%;
-  transform: translateX(-50%);
-  /* Centra los indicadores horizontalmente */
-  display: flex;
-  gap: 5px;
-  /* Espaciado entre los indicadores */
-}
-
-.carousel-indicators span {
-  display: block;
-  width: 10px;
-  /* Ancho del indicador */
-  height: 10px;
-  /* Alto del indicador */
-  border-radius: 50%;
-  /* Forma circular */
-  background-color: rgba(255, 255, 255, 0.5);
-  /* Color de fondo por defecto */
-  cursor: pointer;
-  /* Cambia el cursor al pasar sobre el indicador */
-  transition: background-color 0.3s;
-  /* Transición suave para el color */
-}
-
-.carousel-indicators span.active {
-  background-color: rgba(255, 255, 255, 1);
-  /* Color de fondo para el indicador activo */
-}
-
-@media (max-width: 600px) {
-  .carrousel-item {
-    height: 250px;
-    /* Ajusta la altura para pantallas más pequeñas */
+  swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
   }
 }
