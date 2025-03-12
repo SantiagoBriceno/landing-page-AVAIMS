@@ -57,6 +57,11 @@
   width: 75%;
 }
 
+.long-name {
+  font-style: oblique;
+  font-weight: 400;
+}
+
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
   .section-presentation {

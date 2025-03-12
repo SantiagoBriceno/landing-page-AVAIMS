@@ -10,5 +10,5 @@ import { RouterModule } from '@angular/router'
 })
 
 export class LogoComponent {
-  @Input() color: string = '#000'
+  @Input() secondColor: boolean = false
 }
