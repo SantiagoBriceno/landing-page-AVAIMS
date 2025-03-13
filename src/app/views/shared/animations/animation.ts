@@ -20,10 +20,10 @@ export const slideInRight =
   trigger('slideInRight', [
     transition(':enter', [
       style({ transform: 'translateX(100%)', opacity: 0 }),
-      animate('800ms ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
+      animate('3000ms ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
     ]),
     transition(':leave', [
-      animate('800ms ease-in-out', style({ transform: 'translateX(100%)', opacity: 0 }))
+      animate('3000ms ease-in-out', style({ transform: 'translateX(100%)', opacity: 0 }))
     ])
   ])
 
@@ -31,10 +31,10 @@ export const slideInLeft =
   trigger('slideInLeft', [
     transition(':enter', [
       style({ transform: 'translateX(-100%)', opacity: 0 }),
-      animate('800ms ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
+      animate('3000ms ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
     ]),
     transition(':leave', [
-      animate('800ms ease-in-out', style({ transform: 'translateX(-100%)', opacity: 0 }))
+      animate('3000ms ease-in-out', style({ transform: 'translateX(-100%)', opacity: 0 }))
     ])
   ])
 

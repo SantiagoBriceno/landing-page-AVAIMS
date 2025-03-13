@@ -12,15 +12,52 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url('../../../../../../../public/images/assets/render-avaims3.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-color: rgba(29, 27, 27, 0.911);
+  /* Color de filtro (azul semi-transparente) */
+  background-blend-mode: multiply;
   padding: 20px;
+  color: #f4f6f1;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.presentation-container {
+  display: flex;
+  align-items: center;
   gap: 3rem;
 }
 
-.presentation-container{
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
+// .section-presentation {
+//   display: flex;
+//   width: 100%;
+//   height: auto;
+//   flex-direction: column;
+//   justify-content: center;
+//   padding: 20px;
+//   padding-left: 12rem;
+//   gap: 1.5rem;
+//   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.925) 0%, rgba(0, 0, 0, 0) 50%), url('../../../../../../../public/images/assets/render-avaims3.jpg');
+//   background-size: cover;
+//   background-position: center right;
+//   background-repeat: no-repeat;
+//   opacity: 0;
+//   animation: fade 0.8s ease-out 0.2s forwards; // Añade un retraso de 0.2s
+//   margin-bottom: 3rem;
+//   @keyframes fade {
+//     0% {
+
+//       opacity: 0;
+//     }
+//     100% {
+
+//       opacity: 1;
+//     }
+//   }
+// }
 
 .company-description {
   display: flex;
@@ -34,7 +71,7 @@
   font-size: 2.5em;
   font-weight: 500;
   letter-spacing: .2rem;
-  color: #333;
+  //color: #333;
 }
 
 .company-description p {
@@ -42,7 +79,7 @@
   width: 80%;
   text-align: justify;
   font-weight: 300;
-  color: #333;
+  //color: #333;
 }
 
 .company-img-container {
@@ -55,6 +92,8 @@
 
 .company-img-container img {
   width: 75%;
+  border-radius: 10px;
+  box-shadow: 0 0 1rem 0 rgba(7, 7, 7);
 }
 
 .long-name {
@@ -65,49 +104,62 @@
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
   .section-presentation {
-    flex-direction: column; /* Mantener la dirección de la columna */
-    padding: 15px; /* Reducir el padding */
+    flex-direction: column;
+    /* Mantener la dirección de la columna */
+    padding: 15px;
+    /* Reducir el padding */
   }
 
-  .section-presentation .presentation-container{
+  .section-presentation .presentation-container {
     flex-direction: column;
   }
 
   .company-description,
   .company-img-container {
-    width: 100%; /* Hacer que ambos contenedores ocupen el 100% */
-    align-items: center; /* Centrar el contenido */
-    text-align: center; /* Centrar el texto */
+    width: 100%;
+    /* Hacer que ambos contenedores ocupen el 100% */
+    align-items: center;
+    /* Centrar el contenido */
+    text-align: center;
+    /* Centrar el texto */
   }
 
   .company-description h1 {
-    font-size: 2em; /* Reducir el tamaño del título */
+    font-size: 2em;
+    /* Reducir el tamaño del título */
   }
 
   .company-description p {
-    font-size: 0.9em; /* Reducir el tamaño de la fuente del párrafo */
-    width: 90%; /* Aumentar el ancho del párrafo */
+    font-size: 0.9em;
+    /* Reducir el tamaño de la fuente del párrafo */
+    width: 90%;
+    /* Aumentar el ancho del párrafo */
   }
 
   .company-img-container img {
-    width: 100%; /* Hacer que la imagen ocupe el 100% del contenedor */
+    width: 100%;
+    /* Hacer que la imagen ocupe el 100% del contenedor */
   }
 }
 
 @media (max-width: 480px) {
   .company-description h1 {
-    font-size: 1.5em; /* Reducir aún más el tamaño del título */
+    font-size: 1.5em;
+    /* Reducir aún más el tamaño del título */
   }
 
   .company-description p {
-    font-size: 0.8em; /* Reducir aún más el tamaño de la fuente del párrafo */
+    font-size: 0.8em;
+    /* Reducir aún más el tamaño de la fuente del párrafo */
   }
 
   .company-img-container img {
-    width: 100%; /* Asegurarse de que la imagen ocupe el 100% */
+    width: 100%;
+    /* Asegurarse de que la imagen ocupe el 100% */
   }
 
   button {
-    font-size: 0.9em; /* Ajustar el tamaño del botón */
+    font-size: 0.9em;
+    /* Ajustar el tamaño del botón */
   }
 }

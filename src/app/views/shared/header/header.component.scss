@@ -18,6 +18,11 @@
   width: 100%;
 }
 
+.long-name{
+  font-style: italic;
+  font-weight: 500;
+}
+
 .nav-logo {
   gap: 10px;
 }
@@ -94,5 +99,9 @@
 @media (max-width: 1500px) {
   .nav-container .nav-items {
     width: 60%
+  }
+
+  .long-name{
+    display: none;
   }
 }

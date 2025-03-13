@@ -1,8 +1,6 @@
-<h1 class="text-center subtitle">Aliados internacionales</h1>
 <div class="flex column full-width align-center relation-container">
-  
-
-  <swiper-container #swiper class="carousel-container" init="false">
+  <h1 class="text-center title">Aliados internacionales</h1>
+  <!-- <swiper-container #swiper class="carousel-container" init="false">
     @for (logo of logos; track $index) {
     <swiper-slide>
       <div class="logo-item" [title]="logo.title">
@@ -12,7 +10,35 @@
       </div>
     </swiper-slide>
     }
-  </swiper-container>
+  </swiper-container> -->
+
+  <!-- Only one logo -->
+  <div class="ifhe-logo-item">
+    <a target="_blank" href="https://www.who.int/">
+      <img src="images/sponsors/relations/ifhe-logo-healtcare.svg" alt="Organización Mundial de la Salud" />
+    </a>
+  </div>
+
+  <!-- 4 Logos -->
+  <div class="horizontal-logo-container">
+    @for (logo of horizontalLogos; track $index) {
+    <div class="horizontal-logo-item" [title]="logo.title">
+      <a target="_blank" [href]="logo.url">
+        <img [src]="logo.src" [alt]="logo.alt">
+      </a>
+    </div>
+    }
+  </div>
+
+  <div class="flex grouper vertical-logo-container">
+    @for (logo of verticalLogos; track $index) {
+    <div class="logo-item" [title]="logo.title">
+      <a target="_blank" [href]="logo.url ??  '#'">
+        <img [src]="logo.src" [alt]="logo.alt">
+      </a>
+    </div>
+    }
+  </div>
 
 
 

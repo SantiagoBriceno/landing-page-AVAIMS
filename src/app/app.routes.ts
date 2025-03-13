@@ -9,6 +9,9 @@ import { NoticesAdminFixComponent } from './views/admin/notices-admin-fix/notice
 import { ContactAdminComponent } from './views/admin/contact-admin/contact-admin.component'
 import { JoinUsComponent } from './views/home/join-us/join-us.component'
 import { NoticesComponent } from './views/home/notices/notices.component'
+import { InstitutionalAlliesComponent } from './views/home/institutional-allies/institutional-allies.component'
+import { ContributingAlliesComponent } from './views/home/contributing-allies/contributing-allies.component'
+import { OurProfComponent } from './views/home/our-prof/our-prof.component'
 
 export const routes: Routes = [
   {
@@ -52,6 +55,18 @@ export const routes: Routes = [
       {
         path: 'notices',
         component: NoticesComponent
+      },
+      {
+        path: 'our-allies/institutional-allies',
+        component: InstitutionalAlliesComponent
+      },
+      {
+        path: 'our-allies/contributing-allies',
+        component: ContributingAlliesComponent
+      },
+      {
+        path: 'our-allies/professional',
+        component: OurProfComponent
       }
     ]
   },

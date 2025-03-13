@@ -17,7 +17,7 @@ interface Logo {
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class RelationsComponent implements AfterViewInit {
+export class RelationsComponent {
   public logos: Logo[] = [
     {
       title: 'IFHE',
@@ -33,7 +33,7 @@ export class RelationsComponent implements AfterViewInit {
     },
     {
       title: 'ABDEH',
-      src: 'https://www.abdeh.org.br/public/template/img/logo-default-slim.png',
+      src: 'https://www.abdeh.org.br/template/img/logo-default-slim.png',
       alt: 'ABDEH Logo',
       url: 'https://www.abdeh.org.br/'
     },
@@ -90,48 +90,115 @@ export class RelationsComponent implements AfterViewInit {
     }
   ]
 
+  public verticalLogos: Logo[] = [
+    {
+      title: 'ABDEH',
+      src: 'https://www.abdeh.org.br/template/img/logo-default-slim.png',
+      alt: 'ABDEH Logo',
+      url: 'https://www.abdeh.org.br/'
+    },
+    {
+      title: 'APAIH',
+      src: 'images/sponsors/relations/APAIH.png',
+      alt: 'APAIH Logo',
+      url: 'https://www.facebook.com/p/APAIH-Asociaci%C3%B3n-Paraguaya-de-Arquitectura-e-Ingenier%C3%ADa-Hospitalaria-100066525983678/?locale=en_GB'
+    },
+    {
+      title: 'APAES',
+      src: 'https://www.apaesvirtual.com/wp-content/uploads/2022/07/13686719_1046678188714576_5316920995165925944_n.png',
+      alt: 'APAES Logo',
+      url: 'https://www.apaesvirtual.com/es/inicio/'
+    },
+    {
+      title: 'ACAIH',
+      src: 'https://acaih.com/wp-content/uploads/2023/06/logo-500-x-500-490x490.png',
+      alt: 'ACAIH Logo',
+      url: 'https://acaih.com/'
+    }
+  ]
+
+  public horizontalLogos: Logo[] = [
+    {
+      title: 'ADAIH',
+      src: 'https://aadaih.org.ar/media/logo-AADAIH.png',
+      alt: 'ADAIH Logo',
+      url: 'https://aadaih.org.ar/'
+    },
+    {
+      title: 'ACOAIH',
+      src: 'https://acoaihcr.com/imagenes/logo.webp',
+      alt: 'ACOAIH Logo',
+      url: 'https://acoaihcr.com/'
+    },
+    {
+      title: 'USUAIH',
+      src: '',
+      alt: 'USUAIH Logo'
+    },
+    {
+      title: 'SMAESAC',
+      src: 'https://www.smaesac.org/images/logo.png',
+      alt: 'SMAESAC Logo',
+      url: 'https://www.smaesac.org/'
+    },
+    {
+      title: 'AARQHOS',
+      src: 'https://aarqhos.cl/wp-content/uploads/2024/08/Logo-AARQHOS-v1-1536x266.png',
+      alt: 'AARQHOS Logo',
+      url: 'https://aarqhos.cl/'
+    },
+    {
+      title: 'CCCG',
+      src: 'https://www.cirag.cu/wp-content/uploads/2018/04/Identificador-CCCG-blaco.png',
+      alt: 'CCCG Logo'
+    },
+    {
+      title: 'CCAIH',
+      src: '',
+      alt: 'CCAIH Logo'
+    },
+    {
+      title: 'ABAIH',
+      src: 'images/sponsors/relations/abaih.png',
+      alt: 'ABAIH Logo'
+    }
+  ]
+
   @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>
 
-  swiperOptions: SwiperOptions = {
-    modules: [],
-    slidesPerView: 1,
-    breakpoints: {
-      640: {
-        slidesPerView: 3
-      },
-      1024: {
-        slidesPerView: 5
-      }
-    },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    },
-    effect: 'slide',
-    navigation: {
-      enabled: true
-    },
-    fadeEffect: {
-      crossFade: true
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    on: {
-      init () {
-        // ...
-      }
-    }
-  }
+  // swiperOptions: SwiperOptions = {
+  //   modules: [],
+  //   slidesPerView: 1,
+  //   breakpoints: {
+  //     640: {
+  //       slidesPerView: 3
+  //     },
+  //     1024: {
+  //       slidesPerView: 5
+  //     }
+  //   },
+  //   autoplay: {
+  //     delay: 2500,
+  //     disableOnInteraction: false
+  //   },
+  //   effect: 'slide',
+  //   navigation: {
+  //     enabled: true
+  //   },
+  //   fadeEffect: {
+  //     crossFade: true
+  //   },
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     clickable: true
+  //   },
+  //   on: {
+  //     init () {
+  //       // ...
+  //     }
+  //   }
+  // }
 
-  constructor (@Inject(PLATFORM_ID) private readonly platformId: any) {
-  }
-
-  ngAfterViewInit (): void {
-    if (isPlatformBrowser(this.platformId)) {
-      Object.assign(this.swiper.nativeElement, this.swiperOptions)
-      this.swiper.nativeElement.initialize()
-    }
-  }
+  // constructor (@Inject(PLATFORM_ID) private readonly platformId: any) {
+  // }
 }

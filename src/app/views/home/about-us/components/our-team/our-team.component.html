@@ -1,33 +1,26 @@
 <section class="our-team-container">
-  <h1 class="title text-center">Juntas directivas</h1>
-  <swiper-container #cardSwiper class="swiper-container" init="false">
-    @for (junta of juntas; track $index) {
-    <swiper-slide>
-      <div class="card">
-        <div class="card-title">
-          <h2>{{junta.years}}</h2>
-        </div>
-        <div class="card-content flex column">
-          <ul>
-            @for (person of junta.members.slice(0,4); track $index) {
-            <li class="not-vocals">
-              <p class="name">{{person.ocupation}} {{person.name ?? 'N/A'}}</p>
-              <span class="position"><b>{{person.position}}</b></span>
-            </li>
-            }
+  <h1 class="text-center">Nuestro equipo</h1>
+  <div class="list-container">
+    <ul class="members">
+      @for (member of members; track $index) {
+      <li class="member">
+        <h3>{{member.ocupation}} {{ member.name }}</h3>
+        <p>{{ member.position }}</p>
+      </li>
+      }
 
-            <li class="flex semigrouper wrap justify-center li-vocals">
-              @for (person of junta.members.slice(4); track $index) {
-              <div class="vocals">
-                <p class="name"> {{person.ocupation}} {{person.name ?? 'N/A'}}</p>
-                <p class="position"><b>{{person.position}}</b></p>
-              </div>
-              }
-            </li>
-          </ul>
-        </div>
-      </div>
-    </swiper-slide>
-    }
-  </swiper-container>
+      <li class="vocals-container">
+        <ul class="vocals">
+          @for (member of vocals; track $index) {
+          <li class="vocal">
+            <h3>{{member.ocupation}} {{ member.name }}</h3>
+            <p>{{ member.position }}</p>
+          </li>
+          }
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+
 </section>

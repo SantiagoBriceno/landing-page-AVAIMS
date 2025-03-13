@@ -1,0 +1,11 @@
+<section class="institutional-container flex column align-center">
+  <div class="title-container">
+    <h1 class="title">Aliados Institucionales</h1>
+  </div>
+  <div class="flex wrap justify-center align-center grouper">
+    @for (logo of ourAllies; track $index) {
+      <app-brand-container [brand]="logo" ></app-brand-container>
+    }
+  </div>
+  
+</section>

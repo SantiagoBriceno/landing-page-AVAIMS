@@ -40,6 +40,12 @@ export class HeaderComponent {
     { label: 'Postúlate', link: '/home/about-us/join-us' }
   ]
 
+  public dropDownLinkAllies: Array<{ label: string, link: string }> = [
+    { label: 'Profesionales', link: 'our-allies/professional' },
+    { label: 'Contribuyentes', link: 'our-allies/contributing-allies' },
+    { label: 'Institucionales', link: 'our-allies/institutional-allies' }
+  ]
+
   constructor () {
     afterNextRender(() => {
       console.log('HeaderComponent rendered')

@@ -28,3 +28,11 @@ export interface Contact {
   created_at?: Date
   status?: number
 }
+
+export interface Member {
+  id?: string
+  profession: string
+  name: string
+  email: string
+  location: string
+}

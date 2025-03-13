@@ -1,0 +1,47 @@
+<section class="prof-container bg-primary">
+  <div class="table-container">
+
+    <h1 class="title">Nuestro Profesionales</h1>
+    <p>En AVAIMS, creemos en el poder de las relaciones cercanas y la confianza. Nuestro equipo de profesionales está
+      aquí para escucharte, entender tus necesidades y trabajar contigo para alcanzar tus objetivos.</p>
+
+    <input type="text" placeholder="Buscar..." [(ngModel)]="filterText">
+    <table>
+      <thead>
+        <tr>
+          <th (click)="sortData('name')">Nombre
+            <i [class]="sortColumn === 'name' ? (sortDirection === 'asc' ? icons[1] : icons[2]) : icons[0]"></i>
+          </th>
+
+
+          <th (click)="sortData('profession')">Profesión <i
+              [class]="sortColumn === 'profession' ? (sortDirection === 'asc' ? icons[1] : icons[2]) : icons[0]"></i>
+          </th>
+
+
+          <th (click)="sortData('email')">Email <i
+              [class]="sortColumn === 'email' ? (sortDirection === 'asc' ? icons[1] : icons[2]) : icons[0]"></i></th>
+
+
+          <th (click)="sortData('location')">Ubicación <i
+              [class]="sortColumn === 'location' ? (sortDirection === 'asc' ? icons[1] : icons[2]) : icons[0]"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (member of filteredMembers; track $index) {
+        <tr>
+          <td>{{ member.name }}</td>
+          <td>{{ member.profession }}</td>
+          <td>{{ member.email }}</td>
+          <td>{{ member.location }}</td>
+        </tr>
+        }
+        @empty {
+        <tr>
+          <td colspan="4" style="text-align: center;">No se encontraron profesionales.</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
