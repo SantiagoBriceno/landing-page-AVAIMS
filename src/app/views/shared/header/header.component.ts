@@ -26,7 +26,7 @@ import { DropdownComponent } from '../dropdown/dropdown.component'
       opacity: 1
     })),
     transition('void <=> *', [
-      animate('500ms ease-in-out')
+      animate('1000ms ease-in-out')
     ])
   ])]
 })
@@ -46,12 +46,20 @@ export class HeaderComponent {
     { label: 'Institucionales', link: 'our-allies/institutional-allies' }
   ]
 
+  public longNameText: string = 'Asociación Venezolana de Arquitectura e Ingeniería Médico Sanitaria (AVAIMS)'
+  public letters: string[] = []
+
   constructor () {
+    this.letters = this.longNameText.split('')
     afterNextRender(() => {
       console.log('HeaderComponent rendered')
       console.log(this.contentRef.nativeElement.offsetWidth)
       this.isMobile = this.contentRef.nativeElement.offsetWidth < 768
     })
+  }
+
+  getClassLetter (index: number): string {
+    return `fade-in delay-${index}`
   }
 
   toggleSidebar (): void {

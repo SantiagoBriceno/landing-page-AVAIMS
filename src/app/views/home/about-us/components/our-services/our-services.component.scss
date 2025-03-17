@@ -24,8 +24,23 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
   background-color: #fff;
+
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      animation: fadeIn 0.5s #{$i * 0.25}s forwards;
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 .service-item:hover {
@@ -78,7 +93,7 @@
   .service-item {
     margin-bottom: 0;
   }
-  
+
   .service-item h3 {
     font-size: 1.1em;
   }

@@ -1,10 +1,36 @@
 .relation-container {
+    position: relative;
     padding: 3rem 0;
-    background-color: rgb(235, 235, 235);
     margin-top: 1rem;
+    // Hago que todo el contenido tenga z-index 1
 }
 
-.ifhe-logo-item{
+.relation-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../../../../../public/images/assets/render-avaims3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Color de filtro (azul semi-transparente) */
+    background-blend-mode: multiply;
+    filter: blur(5px);
+    z-index: -0;
+
+}
+
+h1{
+    z-index: 1;
+    color: white;
+}
+
+.ifhe-logo-item {
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +44,7 @@
 
 // Tendra cuatro columnas
 .horizontal-logo-container {
+    z-index: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
@@ -42,6 +69,7 @@
 }
 
 .vertical-logo-container {
+    z-index: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;

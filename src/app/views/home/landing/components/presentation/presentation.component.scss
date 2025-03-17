@@ -16,7 +16,7 @@
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
-  background-color: rgba(29, 27, 27, 0.911);
+  background-color: rgba(35, 56, 77, 0.911);
   /* Color de filtro (azul semi-transparente) */
   background-blend-mode: multiply;
   padding: 20px;
@@ -75,8 +75,8 @@
 }
 
 .company-description p {
-  font-size: 1em;
-  width: 80%;
+  font-size: 1rem;
+  width: 70%;
   text-align: justify;
   font-weight: 300;
   //color: #333;
@@ -96,9 +96,17 @@
   box-shadow: 0 0 1rem 0 rgba(7, 7, 7);
 }
 
+.super{
+  font-size: 3rem;
+  font-weight: 1000;
+  margin: 0;
+}
+
 .long-name {
   font-style: oblique;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #f3e5f0;
 }
 
 /* Media Queries para Responsividad */
