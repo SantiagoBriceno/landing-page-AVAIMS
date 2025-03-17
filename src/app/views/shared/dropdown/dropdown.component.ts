@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core'
+import { Component, HostListener, Input, Output, EventEmitter } from '@angular/core'
 import { RouterLink } from '@angular/router'
 
 @Component({
@@ -14,6 +14,7 @@ export class DropdownComponent {
   @Input() buttonText: string = 'Menú'
   @Input() options: Array<{ label: string, link: string }> = []
   isOpen: boolean = false
+  @Output() selectedOption: EventEmitter<any> = new EventEmitter()
 
   toggleMenu (): void {
     this.isOpen = !this.isOpen
@@ -22,6 +23,7 @@ export class DropdownComponent {
   selectOption (link: string): void {
     console.log('Navigating to', link)
     this.isOpen = false
+    this.selectedOption.emit(true)
   }
 
   @HostListener('document:click', ['$event'])

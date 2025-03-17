@@ -38,35 +38,43 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: LandingPageComponent
+        component: LandingPageComponent,
+        title: 'AVAIMS | Home'
       },
       {
         path: 'about-us/our-history',
-        component: AboutUsComponent
+        component: AboutUsComponent,
+        title: 'AVAIMS | Nosotros'
       },
       {
         path: 'about-us/join-us',
-        component: JoinUsComponent
+        component: JoinUsComponent,
+        title: 'AVAIMS | Unete'
       },
       {
         path: 'contact-us',
-        component: ContactUsPageComponent
+        component: ContactUsPageComponent,
+        title: 'AVAIMS | Contactanos'
       },
       {
         path: 'notices',
-        component: NoticesComponent
+        component: NoticesComponent,
+        title: 'AVAIMS | Noticias'
       },
       {
         path: 'our-allies/institutional-allies',
-        component: InstitutionalAlliesComponent
+        component: InstitutionalAlliesComponent,
+        title: 'AVAIMS | Aliados Institucionales'
       },
       {
         path: 'our-allies/contributing-allies',
-        component: ContributingAlliesComponent
+        component: ContributingAlliesComponent,
+        title: 'AVAIMS | Aliados Contribuyentes'
       },
       {
         path: 'our-allies/professional',
-        component: OurProfComponent
+        component: OurProfComponent,
+        title: 'AVAIMS | Nuestros Profesionales'
       }
     ]
   },

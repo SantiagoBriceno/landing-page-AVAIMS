@@ -15,23 +15,22 @@
             (click)="toggleSidebar()">Home</a>
         </li>
         <li class="has-submenu">
-          <a routerLink="/home/about-us/our-history" routerLinkActive="active" (click)="toggleSidebar()">nosotros</a>
-          <ul class="submenu">
-            <li>
-              <a href="">Nuestra historia</a>
-            </li>
-            <li>
-              <a href="">
-                Únetenos
-              </a>
-            </li>
-          </ul>
+          <app-dropdown buttonText='Nosotros' [options]="aboutUsOptions"
+            (selectedOption)="toggleSidebar()"></app-dropdown>
+        </li>
+        <li class="has-submenu">
+          <app-dropdown buttonText="Aliados" [options]="ourAlliesOptions"
+            (selectedOption)="toggleSidebar()"></app-dropdown>
+        </li>
+        <li>
+          <a routerLink="/home/notices" routerLinkActive="active" (click)="toggleSidebar()">Noticias</a>
         </li>
         <li>
           <a routerLink="/home/contact-us" routerLinkActive="active" (click)="toggleSidebar()">Contactanos</a>
         </li>
+
         <li>
-          <a routerLink="/home/notices" routerLinkActive="active" (click)="toggleSidebar()">Noticias</a>
+          <a href=""></a>
         </li>
       </ul>
     </div>
