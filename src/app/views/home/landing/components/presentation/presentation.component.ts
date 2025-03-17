@@ -1,10 +1,12 @@
 import { Component, ElementRef, ViewChild } from '@angular/core'
 import { slideInLeft, slideInRight } from '../../../../shared/animations/animation'
+import { RouterModule } from '@angular/router'
 
 @Component({
   selector: 'presentation-landing-page',
   standalone: true,
   imports: [
+    RouterModule
   ],
   templateUrl: './presentation.component.html',
   styleUrl: './presentation.component.scss',

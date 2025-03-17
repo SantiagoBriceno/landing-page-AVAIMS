@@ -24,7 +24,11 @@
     @for (logo of horizontalLogos; track $index) {
     <div class="horizontal-logo-item" [title]="logo.title">
       <a target="_blank" [href]="logo.url">
+        @if (logo.src !== '') {
         <img [src]="logo.src" [alt]="logo.alt">
+        }@else {
+        <h1>{{logo.title}}</h1>
+        }
       </a>
     </div>
     }
@@ -34,12 +38,13 @@
     @for (logo of verticalLogos; track $index) {
     <div class="logo-item" [title]="logo.title">
       <a target="_blank" [href]="logo.url ??  '#'">
+        @if (logo.src !== '') {
         <img [src]="logo.src" [alt]="logo.alt">
+        }@else {
+        <h1>{{logo.title}}</h1>
+        }
       </a>
     </div>
     }
   </div>
-
-
-
 </div>

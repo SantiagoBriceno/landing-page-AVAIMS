@@ -16,7 +16,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgb(91 91 91 / 85%);
     /* Color de filtro (azul semi-transparente) */
     background-blend-mode: multiply;
     filter: blur(5px);
@@ -47,10 +47,10 @@ h1{
     z-index: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 4rem;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 0rem;
 
     .horizontal-logo-item {
         display: flex;
@@ -96,6 +96,14 @@ img:hover {
     scale: 1.1;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+
+    h1{
+        letter-spacing: .3rem;
+    }
+}
 @media (max-width: 1200px) {
 
     .horizontal-logo-container,

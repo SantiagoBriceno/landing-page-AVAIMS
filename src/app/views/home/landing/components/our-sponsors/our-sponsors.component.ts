@@ -3,12 +3,14 @@ import { Sponsor } from '../../../../../../types'
 import { OurSponsorsService } from './our-sponsors.service'
 import { fadeIn } from '../../../../shared/animations/animation'
 import { BrandContainerComponent } from '../../../../shared/brand-container/brand-container.component'
+import { RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-our-sponsors',
   standalone: true,
   imports: [
-    BrandContainerComponent
+    BrandContainerComponent,
+    RouterModule
   ],
   templateUrl: './our-sponsors.component.html',
   styleUrl: './our-sponsors.component.scss',

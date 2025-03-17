@@ -1,7 +1,5 @@
-import { isPlatformBrowser } from '@angular/common'
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core'
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core'
 import { SwiperContainer } from 'swiper/element'
-import { SwiperOptions } from 'swiper/types'
 
 interface Logo {
   title: string
@@ -98,10 +96,9 @@ export class RelationsComponent {
       url: 'https://www.abdeh.org.br/'
     },
     {
-      title: 'APAIH',
-      src: 'images/sponsors/relations/APAIH.png',
-      alt: 'APAIH Logo',
-      url: 'https://www.facebook.com/p/APAIH-Asociaci%C3%B3n-Paraguaya-de-Arquitectura-e-Ingenier%C3%ADa-Hospitalaria-100066525983678/?locale=en_GB'
+      title: 'USUAIH',
+      src: '',
+      alt: 'USUAIH Logo'
     },
     {
       title: 'APAES',
@@ -119,27 +116,28 @@ export class RelationsComponent {
 
   public horizontalLogos: Logo[] = [
     {
-      title: 'ADAIH',
-      src: 'https://aadaih.org.ar/media/logo-AADAIH.png',
-      alt: 'ADAIH Logo',
-      url: 'https://aadaih.org.ar/'
-    },
-    {
       title: 'ACOAIH',
       src: 'https://acoaihcr.com/imagenes/logo.webp',
       alt: 'ACOAIH Logo',
       url: 'https://acoaihcr.com/'
     },
     {
-      title: 'USUAIH',
-      src: '',
-      alt: 'USUAIH Logo'
+      title: 'APAIH',
+      src: 'images/sponsors/relations/APAIH.png',
+      alt: 'APAIH Logo',
+      url: 'https://www.facebook.com/p/APAIH-Asociaci%C3%B3n-Paraguaya-de-Arquitectura-e-Ingenier%C3%ADa-Hospitalaria-100066525983678/?locale=en_GB'
     },
     {
       title: 'SMAESAC',
       src: 'https://www.smaesac.org/images/logo.png',
       alt: 'SMAESAC Logo',
       url: 'https://www.smaesac.org/'
+    },
+    {
+      title: 'ADAIH',
+      src: 'https://aadaih.org.ar/media/logo-AADAIH.png',
+      alt: 'ADAIH Logo',
+      url: 'https://aadaih.org.ar/'
     },
     {
       title: 'AARQHOS',
