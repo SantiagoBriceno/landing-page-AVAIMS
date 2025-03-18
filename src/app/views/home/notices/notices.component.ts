@@ -1,14 +1,16 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Notice } from '../../../../types'
 import { MyCardComponent } from '../../shared/card/my-card.component'
+import { FormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-notices',
-  imports: [MyCardComponent],
+  imports: [MyCardComponent, FormsModule, RouterModule],
   templateUrl: './notices.component.html',
   styleUrl: './notices.component.scss'
 })
-export class NoticesComponent {
+export class NoticesComponent implements OnInit {
   public notices: Notice[] = [
     {
 
@@ -47,4 +49,27 @@ export class NoticesComponent {
       url: 'https://ejemplo.com/noticia5'
     }
   ]
+
+  filteredNotices: Notice[] = []
+  searchTerm: string = ''
+  searchDate: Date | null = null
+
+  ngOnInit (): void {
+    this.filteredNotices = [...this.notices]
+  }
+
+  filterNotices (): void {
+    this.filteredNotices = this.notices.filter(notice => {
+      const searchMatch =
+        this.searchTerm === '' ||
+        notice.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        notice.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+      const dateMatch =
+        this.searchDate == null ||
+        new Date(notice.date).toDateString() ===
+          new Date(this.searchDate).toDateString()
+      console.log('searchMatch:', searchMatch, 'dateMatch:', dateMatch)
+      return searchMatch && dateMatch
+    })
+  }
 }

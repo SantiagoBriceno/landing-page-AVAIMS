@@ -1,11 +1,17 @@
-<div class="full-width flex column align-center">
-  <h1 class="title">Noticias</h1>
-  <div class="filter-container">
-    <p>Proponer un filtrado de noticias por año de publicacion? titulo? palabras claves?</p>
+<div class="news-container">
+  <h1 class="title text-center">Noticias</h1>
+  <div class="flex column">
+    <div class="filters">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar por título o descripción"
+        (input)="filterNotices()">
+      <!-- <input type="date" [(ngModel)]="searchDate" (input)="filterNotices()"> -->
+    </div>
   </div>
-  <div class="notices-container">
-    @for (notice of notices; track $index) {
-      <my-card [notice]="notice"></my-card>
+
+  <div class="news-list">
+    @for (notice of filteredNotices; track $index) {
+    <my-card [notice]="notice"></my-card>
     }
+
   </div>
 </div>

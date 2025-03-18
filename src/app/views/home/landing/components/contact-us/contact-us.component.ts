@@ -3,6 +3,7 @@ import { LogoComponent } from '../../../../shared/logo/logo.component'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { Contact } from '../../../../../../types'
 import { ContactUsService } from './contact-us.service'
+import { MAIL, TLF } from '../../../../../core/constant/contant'
 
 @Component({
   selector: 'app-contact-us',
@@ -16,6 +17,11 @@ import { ContactUsService } from './contact-us.service'
 })
 export class ContactUsComponent {
   myFormContact: FormGroup
+  public contact = {
+    mail: MAIL,
+    tlf: TLF
+  }
+
   constructor (
     private readonly fb: FormBuilder,
     private readonly contactUsService: ContactUsService
