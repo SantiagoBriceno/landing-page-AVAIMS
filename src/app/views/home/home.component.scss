@@ -8,6 +8,8 @@
   border-radius: 5px;
   width: auto;
   height: auto;
+  right: 2rem;
+  bottom: 2rem;
   transition: all 0.35s ease;
 }
 
@@ -32,6 +34,13 @@
 }
 
 .scroll-button {
+  position: fixed;
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  bottom: 2rem;
+  left: 2rem;
+  transition: all 0.35s ease;
   background-color: rgba(69, 171, 255, 0.5568627451);
   color: white;
   cursor: pointer;
@@ -51,7 +60,7 @@
 }
 
 .scroll-button i {
-  font-size: 2rem;
+  font-size: 1rem;
   color: #333;
 }
 
@@ -72,8 +81,8 @@
     right: 2rem;
   }
 
-  .floating-button i {
-    font-size: 3rem;
+  .scroll-button {
+    bottom: 2.8rem;
+    left: 2rem;
   }
-
 }
