@@ -9,13 +9,23 @@
   margin-bottom: 20px;
 }
 
-.filters input {
+.filters input,.filters select {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 20%;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  /* Cambia el color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Agrega una sombra sutil al enfocar */
+}
+
+
 
 .news-list {
   display: grid;
@@ -42,7 +52,6 @@
   .filters {
     flex-direction: column;
   }
-
   .filters input {
     width: 100%;
     margin-bottom: 10px;

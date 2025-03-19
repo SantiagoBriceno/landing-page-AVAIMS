@@ -1,17 +1,32 @@
 <div class="news-container">
-  <h1 class="title text-center">Noticias</h1>
+  <h1 class="title">Noticias</h1>
   <div class="flex column">
     <div class="filters">
       <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar por título o descripción"
-        (input)="filterNotices()">
-      <!-- <input type="date" [(ngModel)]="searchDate" (input)="filterNotices()"> -->
+        (input)="filterBySearchTerm()">
+      <!-- <select [(ngModel)]="searchCategory" (change)="filterNotices()">
+        <option value="">Todas las categorías</option>
+        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select> -->
+      <select [(ngModel)]="searchYear" name="year" id="year"  (change)="filterByYear()">
+        <option value="1999">Todos los años</option>
+        @for (year of noticesYears; track $index) {
+          <option [value]="year">{{year}}</option>
+        }
+      </select>
     </div>
   </div>
 
   <div class="news-list">
-    @for (notice of filteredNotices; track $index) {
-    <my-card [notice]="notice"></my-card>
-    }
+    <div class="news-list">
+      @if (filteredNotices.length > 0) {
+      @for (notice of filteredNotices; track $index) {
+      <my-card [notice]="notice"></my-card>
+      }
+      } @else {
+      <p>No se encontraron noticias que coincidan con los criterios de búsqueda.</p>
+      }
+    </div>
 
   </div>
 </div>

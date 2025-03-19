@@ -4,15 +4,45 @@
 
 .floating-button {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
   z-index: 1000;
-  border-radius: 50%;
+  border-radius: 5px;
   width: auto;
   height: auto;
+  transition: all 0.35s ease;
 }
 
-.floating-button i {
+.bottom {
+  bottom: 1rem;
+}
+
+.left {
+  left: 1rem;
+}
+
+.right {
+  right: 1rem;
+}
+
+.inactive {
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+}
+
+.scroll-button {
+  background-color: rgba(69, 171, 255, 0.5568627451);
+  color: white;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.scroll-button:hover {
+  background-color: rgba(69, 171, 255, 0.8);
+}
+
+.floating-button .wa-icon {
   font-size: 3.5rem;
   color: #25d366;
   text-align: center;
@@ -20,7 +50,12 @@
   transition: color 0.35s;
 }
 
-.floating-button i:hover {
+.scroll-button i {
+  font-size: 2rem;
+  color: #333;
+}
+
+.floating-button .wa-icon:hover {
   color: #128c7e;
 }
 
@@ -40,5 +75,5 @@
   .floating-button i {
     font-size: 3rem;
   }
-  
+
 }
