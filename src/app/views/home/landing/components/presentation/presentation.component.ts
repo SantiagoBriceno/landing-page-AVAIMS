@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core'
-import { slideInLeft, slideInRight } from '../../../../shared/animations/animation'
+import { fadeIn, slideInLeft, slideInRight } from '../../../../shared/animations/animation'
 import { RouterModule } from '@angular/router'
 
 @Component({
@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router'
   ],
   templateUrl: './presentation.component.html',
   styleUrl: './presentation.component.scss',
-  animations: [slideInLeft, slideInRight]
+  animations: [slideInLeft, slideInRight, fadeIn]
 })
 export class PresentationComponent {
   @ViewChild('description')

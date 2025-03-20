@@ -1,0 +1,9 @@
+<div class="bg-swiper">
+  <swiper-container class="swiper-container" #bgSwiper init="false">
+    @for (item of items; track $index) {
+    <swiper-slide class="swiper-slide">
+      <img [src]="item" alt="background image" />
+    </swiper-slide>
+    }
+  </swiper-container>
+</div>

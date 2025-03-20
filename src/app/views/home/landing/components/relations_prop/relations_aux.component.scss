@@ -2,6 +2,7 @@
     position: relative;
     padding: 3rem 0;
     margin-top: 1rem;
+    background-color: black;
     // Hago que todo el contenido tenga z-index 1
 }
 
@@ -16,7 +17,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgb(91 91 91 / 85%);
+    background-color: rgba(0, 0, 0, 0.74);
     /* Color de filtro (azul semi-transparente) */
     background-blend-mode: multiply;
     filter: blur(5px);
@@ -26,7 +27,8 @@
 
 h1{
     z-index: 1;
-    color: white;
+    color: #fff;
+    font-weight: 500;
 }
 
 .ifhe-logo-item {

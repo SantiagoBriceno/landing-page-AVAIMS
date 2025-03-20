@@ -1,10 +1,11 @@
 import { Component } from '@angular/core'
 import { PresentationComponent } from './components/presentation/presentation.component'
 import { LastNoticeComponent } from './components/last-notice/last-notice.component'
-import { CarrouselComponent } from '../../shared/carrousel/carrousel.component'
-import { ContactUsComponent } from './components/contact-us/contact-us.component'
-import { OurSponsorsComponent } from './components/our-sponsors/our-sponsors.component'
+// import { CarrouselComponent } from '../../shared/carrousel/carrousel.component'
+// import { ContactUsComponent } from './components/contact-us/contact-us.component'
+// import { OurSponsorsComponent } from './components/our-sponsors/our-sponsors.component'
 import { RelationsComponent } from './components/relations_prop/relations_aux.component'
+import { BackgroundSwiperComponent } from '../../shared/background-swiper/background-swiper.component'
 
 @Component({
   selector: 'app-landing-page',
@@ -12,10 +13,11 @@ import { RelationsComponent } from './components/relations_prop/relations_aux.co
   imports: [
     PresentationComponent,
     LastNoticeComponent,
-    CarrouselComponent,
-    ContactUsComponent,
-    OurSponsorsComponent,
-    RelationsComponent
+    // CarrouselComponent,
+    // ContactUsComponent,
+    // OurSponsorsComponent,
+    RelationsComponent,
+    BackgroundSwiperComponent
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'

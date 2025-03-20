@@ -1,17 +1,25 @@
-.footer-container{
+.footer-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #33333310;
+  overflow-x: hidden;
+  background-image: url('../../../../../public/images/assets/p6.png');
+  z-index: 0;
+  background-color: #000000e3;
+  /* Color de filtro (azul semi-transparente) */
+  background-blend-mode: multiply;
+  z-index: 1;
+  background-repeat: repeat;
+  
 }
 
-.logo-footer{
+.logo-footer {
   margin: 2rem 0;
 }
 
-.footer-content{
+.footer-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,12 +27,12 @@
   width: 100%;
 }
 
-.footer-company-description p{
-  color: #333;
+.footer-company-description p {
+  color: #fff;
   text-align: center;
 }
 
-.footer-items ul{
+.footer-items ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -34,25 +42,25 @@
   gap: 9rem;
 }
 
-.footer-items li{
+.footer-items li {
   display: flex;
   gap: .5rem;
   font-size: .8rem;
-  color: #333;
+  color: #fff;
   align-items: flex-end;
   width: 200px;
 }
 
-.footer-items a{
+.footer-items a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
 
-.footer-items a:hover{
+.footer-items a:hover {
   color: blue;
 }
 
-.footer-social{
+.footer-social {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -60,29 +68,28 @@
   gap: 3rem;
 }
 
-.copyrights{
+.copyrights {
   margin-top: 2rem;
   width: 100%;
   padding: 1rem 0;
-  background-color: #33333320;
+  background-color: #83838320;
 }
 
-.copyrights p{
+.copyrights p {
   font-size: .6rem;
-  color: #333;
   text-align: center;
   margin: 0;
 }
 
 
 
-.author a{
+.author a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
 
-.author a:hover{
-  color: blue;
+.author a:hover {
+  color: rgba(255, 255, 255, 0.205);
 }
 
 @media (max-width: 768px) {

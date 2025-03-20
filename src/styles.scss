@@ -2,13 +2,15 @@
 $background-principal: #F5F5F5;
 $background-secundario: #1C1C1C;
 $background-terciario: #60615f;
-$texto-principal: #363636;
+$texto-principal: #fff;
 $texto-secundario: #f4f6f1; // Color contrastante para el fondo secundario
 $color-principal: #45abff;
 $color-borde: #FF5722; // Color de borde
 $color-error: #FF4081; // Color de error
 $color-hover: #007bff;
-; // Color de hover
+$background-dark: #1a1a27;
+$color-dard: #888;
+ // Color de hover
 
 html,
 body {
@@ -29,7 +31,7 @@ body {
   font-style: normal;
   font-size: 2.5rem;
   text-align: center;
-  color: #333;
+  color: #fff;
   margin-top: 0;
 }
 
@@ -38,7 +40,7 @@ body {
 }
 
 .footer-component {
-  background-color: #33333310;
+  background-color: #1a1a2710;
 }
 
 .flex {
@@ -112,7 +114,7 @@ body {
   color: $texto-secundario;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  // border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.35s;
 }
@@ -145,11 +147,13 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  background-color: #f5f5f5;
   overflow-x: hidden;
+  z-index: -1;
   background-image: url('../public/images/assets/p6.png');
-  z-index: -2;
   background-repeat: repeat;
+  background-color: #b1b9c5;
+  /* Color de filtro (azul semi-transparente) */
+  background-blend-mode: multiply;
 }
 
 .bg-primary{
@@ -158,15 +162,16 @@ body {
 
 .super-title {
   font-size: 3rem;
-  font-weight: 700;
-  color: #333;
+  font-weight: 500;
+  color: #fff;
   margin-top: 1rem;
+  letter-spacing: .5rem;
 }
 
 .title {
   font-size: 2.5rem;
-  font-weight: 600;
-  color: rgba(35, 56, 77, 0.911);
+  font-weight: 500;
+  color: #888;
   margin-top: 1rem;
 }
 
