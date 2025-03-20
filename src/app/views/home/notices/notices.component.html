@@ -1,21 +1,30 @@
 <div class="news-container">
   <h1 class="title">Noticias</h1>
-  <div class="flex column">
-    <div class="filters">
+
+  <div class="filters column">
+    <div class="flex  filters-input">
       <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar por título o descripción"
-        (input)="filterBySearchTerm()">
-      <!-- <select [(ngModel)]="searchCategory" (change)="filterNotices()">
-        <option value="">Todas las categorías</option>
-        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-      </select> -->
-      <select [(ngModel)]="searchYear" name="year" id="year"  (change)="filterByYear()">
+        (input)="onSearchTermChange()">
+      <select [(ngModel)]="searchCategory" (change)="onCategoryChange()">
+        <option value="Todas">Todas las categorías</option>
+        @for (item of noticesCategories; track $index) {
+        <option [value]="item">{{item}}</option>
+        }
+      </select>
+      <select [(ngModel)]="searchYear" name="year" id="year" (change)="onYearChange()">
         <option value="1999">Todos los años</option>
         @for (year of noticesYears; track $index) {
-          <option [value]="year">{{year}}</option>
+        <option [value]="year">{{year}}</option>
         }
       </select>
     </div>
+    <div class="clear-filter">
+      <!-- Button para limpiar los filtros -->
+      <button class="my-button" (click)="clearFilters()">Limpiar filtros</button>
+    </div>
+
   </div>
+
 
   <div class="news-list">
     <div class="news-list">

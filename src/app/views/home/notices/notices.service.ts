@@ -14,8 +14,19 @@ export class NoticesService {
     return this.http.get<any>(environment.API_URL + '/notices')
   }
 
-  getNoticesYears (notices: Notice[]): number[] {
-    const years = notices.map(notice => new Date(notice.date).getFullYear())
-    return [...new Set(years)].sort((a, b) => a - b) // Ordenar los años de menor a mayor
+  getNoticesYearsAndCategories (notices: Notice[]): { years: number[], categories: string[] } {
+    const years = new Set<number>()
+    const categories = new Set<string>()
+    notices.forEach(notice => {
+      years.add(new Date(notice.date).getFullYear())
+      if (notice.category !== undefined) {
+        categories.add(notice.category)
+      }
+    })
+
+    return {
+      years: Array.from(years).sort((a, b) => a - b),
+      categories: [...categories]
+    }
   }
 }
