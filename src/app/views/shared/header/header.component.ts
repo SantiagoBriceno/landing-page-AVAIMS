@@ -37,11 +37,11 @@ export class HeaderComponent {
   public animationState: string = 'initial'
   public dropDownLink: Array<{ label: string, link: string }> = [
     { label: 'Quiénes somos', link: '/home/about-us/our-history' },
-    { label: 'Postúlate', link: '/home/about-us/join-us' }
+    { label: 'Membresía', link: '/home/about-us/join-us' }
   ]
 
   public dropDownLinkAllies: Array<{ label: string, link: string }> = [
-    { label: 'Profesionales', link: 'our-allies/professional' },
+    { label: 'Activos', link: 'our-allies/professional' },
     { label: 'Contribuyentes', link: 'our-allies/contributing-allies' },
     { label: 'Institucionales', link: 'our-allies/institutional-allies' }
   ]

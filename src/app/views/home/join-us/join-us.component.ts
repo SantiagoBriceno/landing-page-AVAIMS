@@ -7,5 +7,5 @@ import { Component } from '@angular/core'
   styleUrl: './join-us.component.scss'
 })
 export class JoinUsComponent {
-  public planillaUrl = 'URL_DIRECTA_DE_TU_PLANILLA'
+  public planillaUrl = 'https://docs.google.com/spreadsheets/d/1sd-xTketvVFz74XpOkpNus2vuPPiqeuH/edit?usp=drive_link&ouid=107407489078497953665&rtpof=true&sd=true'
 }

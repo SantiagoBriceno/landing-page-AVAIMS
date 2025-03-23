@@ -5,8 +5,7 @@
     <p class="long-name">
       <span>Asociación Venezolana </span>
       <span>de Arquitectura e Ingeniería </span>
-      <span>Médico Sanitaria
-        (AVAIMS)</span>
+      <span>Médico Sanitaria</span>
 
     </p>
 
@@ -18,8 +17,8 @@
           <li>
             <app-dropdown buttonText="Nosotros" [options]="dropDownLink"></app-dropdown>
           </li>
+          <li><app-dropdown buttonText="Miembros" [options]="dropDownLinkAllies"></app-dropdown></li>
           <li><a routerLink="/home/notices" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Noticias</a></li>
-          <li><app-dropdown buttonText="Aliados" [options]="dropDownLinkAllies"></app-dropdown></li>
           <li><a routerLink="/home/contact-us" routerLinkActive="activeLink" ariaCurrentWhenActive="page">Contacto</a>
           </li>
         </ul>
