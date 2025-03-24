@@ -14,24 +14,24 @@ import { ContributingAlliesComponent } from './views/home/contributing-allies/co
 import { OurProfComponent } from './views/home/our-prof/our-prof.component'
 
 export const routes: Routes = [
-  {
-    path: 'admin',
-    component: AdminComponent,
-    children: [
-      {
-        path: '',
-        component: MainComponent
-      },
-      {
-        path: 'notices',
-        component: NoticesAdminFixComponent
-      },
-      {
-        path: 'contact',
-        component: ContactAdminComponent
-      }
-    ]
-  },
+  // {
+  //   path: 'admin',
+  //   component: AdminComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: MainComponent
+  //     },
+  //     {
+  //       path: 'notices',
+  //       component: NoticesAdminFixComponent
+  //     },
+  //     {
+  //       path: 'contact',
+  //       component: ContactAdminComponent
+  //     }
+  //   ]
+  // },
   {
     path: 'home',
     component: HomeComponent,
