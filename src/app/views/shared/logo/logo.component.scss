@@ -46,3 +46,17 @@ a {
 .second-color{
   color: #ababab;
 }
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  p{
+    display: none;
+  }
+
+  img {
+    width: 40px;
+  }
+}
