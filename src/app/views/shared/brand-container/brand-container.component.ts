@@ -20,6 +20,8 @@ export class BrandContainerComponent implements AfterViewInit {
     url: ''
   }
 
+  @Input() complete: boolean = false
+
   public animationState: string = 'initial'
   @ViewChild('brandContainer') brandContainer!: ElementRef
 
