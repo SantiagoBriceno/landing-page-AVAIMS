@@ -4,7 +4,7 @@
   </div>
   <div class="flex wrap justify-center align-center grouper container">
     @for (logo of ourAllies; track $index) {
-      <app-brand-container [brand]="logo" ></app-brand-container>
+      <app-brand-container class="margin-right" [brand]="logo" [complete]="true" ></app-brand-container>
     }
   </div>
   

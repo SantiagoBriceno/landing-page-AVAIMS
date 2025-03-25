@@ -8,14 +8,22 @@
   flex-direction: column;
   width: 200px;
   padding: 2rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
   cursor: pointer;
-  background-color: #fff;
 }
 
 .brand-item img {
   width: 200px
+}
+
+.brand-item h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.brand-item p {
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+  margin-top: 0;
 }

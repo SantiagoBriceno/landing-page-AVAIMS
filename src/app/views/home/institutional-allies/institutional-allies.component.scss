@@ -1,4 +1,13 @@
 .container{
   width: 80%;
-  margin-bottom: 3rem;
+  gap: 3rem;
+  align-items: flex-end;
+}
+
+
+@media screen and (max-width: 768px){
+  .margin-right{
+    margin-right:0;
+  }
+  
 }

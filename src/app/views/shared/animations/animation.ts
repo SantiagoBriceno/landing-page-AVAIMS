@@ -10,12 +10,13 @@ export const fadeIn = trigger('fadeIn', [
     transform: 'translateY(0)'
   })),
   state('hover', style({
-    transform: 'scale(1.1)'
+    transform: 'scale(1.1) translateY(0)'
   })),
   transition('initial => final', animate(1000)),
   transition('final <=> hover', animate('200ms ease-in-out'))
 ])
 
+// Animacion fadeIn que tambien tiene
 export const slideInRight =
   trigger('slideInRight', [
     transition(':enter', [

@@ -3,10 +3,14 @@
   gap: 3rem;
   align-items: flex-end;
 }
+
 .contributing-container{
   margin-bottom: 3rem;
 }
 
-.margin-right{
-  margin-right:3rem;
+@media screen and (max-width: 768px){
+  .margin-right{
+    margin-right:0;
+  }
+  
 }
