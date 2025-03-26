@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms'
   styleUrl: './our-prof.component.scss'
 })
 export class OurProfComponent implements OnInit {
-  public members: Member[] = []
   public membersExample: Member[] = [
     {
       id: '67cccf526b66040ac0681660',
@@ -46,6 +45,10 @@ export class OurProfComponent implements OnInit {
   sortColumn: string | null = null
   sortDirection: 'asc' | 'desc' | null = null
 
+  pageSize: number = 15 // Número de elementos por página
+  currentPage: number = 1
+  totalPages: number = 0
+
   constructor (private readonly OurProfService: OurProfService) {}
 
   get filteredMembers (): Member[] {
@@ -66,14 +69,8 @@ export class OurProfComponent implements OnInit {
   }
 
   ngOnInit (): void {
-    // this.OurProfService.getAllMembers().subscribe((data) => {
-    //   this.membersExample = data.members
-    // },
-    // (error) => {
-    //   console.error(error)
-    // })
-
-    this.sortData('name')
+    this.loadMembers()
+    // this.sortData('name')
   }
 
   sortData (column: string): void {
@@ -105,6 +102,21 @@ export class OurProfComponent implements OnInit {
       } else {
         return 0
       }
+    })
+  }
+
+  changePage (page: number): void {
+    if (page < 1 || page > this.totalPages) {
+      return
+    }
+    this.currentPage = page
+    this.loadMembers()
+  }
+
+  loadMembers (): void {
+    this.OurProfService.getMembersPaginated(this.currentPage, this.pageSize).subscribe((data) => {
+      this.membersExample = data.members
+      this.totalPages = data.totalPageCount
     })
   }
 }

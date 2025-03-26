@@ -32,6 +32,7 @@ export interface Contact {
 
 export interface Member {
   id?: string
+  nro?: string
   profession: string
   name: string
   email: string

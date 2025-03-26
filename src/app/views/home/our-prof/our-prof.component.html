@@ -5,23 +5,24 @@
     <p>En AVAIMS, creemos en el poder de las relaciones cercanas y la confianza. Nuestro equipo de profesionales está
       aquí para escucharte, entender tus necesidades y trabajar contigo para alcanzar tus objetivos.</p>
 
-    <input type="text" placeholder="Buscar..." [(ngModel)]="filterText">
+    <!-- <input type="text" placeholder="Buscar..." [(ngModel)]="filterText"> -->
     <table>
       <thead>
         <tr>
+          <th>
+            Nro.
+          </th>
+
           <th (click)="sortData('name')">Nombre
             <i [class]="sortColumn === 'name' ? (sortDirection === 'asc' ? icons[1] : icons[2]) : icons[0]"></i>
           </th>
-
 
           <th (click)="sortData('profession')">Profesión <i
               [class]="sortColumn === 'profession' ? (sortDirection === 'asc' ? icons[1] : icons[2]) : icons[0]"></i>
           </th>
 
-
           <th (click)="sortData('email')">Email <i
               [class]="sortColumn === 'email' ? (sortDirection === 'asc' ? icons[1] : icons[2]) : icons[0]"></i></th>
-
 
           <th (click)="sortData('location')">Ubicación <i
               [class]="sortColumn === 'location' ? (sortDirection === 'asc' ? icons[1] : icons[2]) : icons[0]"></i></th>
@@ -30,6 +31,7 @@
       <tbody>
         @for (member of filteredMembers; track $index) {
         <tr>
+          <td>{{member?.nro}}</td>
           <td>{{ member.name }}</td>
           <td>{{ member.profession }}</td>
           <td>{{ member.email }}</td>
@@ -43,5 +45,10 @@
         }
       </tbody>
     </table>
+    <div class="pagination">
+      <button class="my-button" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+      <span>Página {{ currentPage }} de {{ totalPages }}</span>
+      <button class="my-button" (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Siguiente</button>
+    </div>
   </div>
 </section>
