@@ -12,29 +12,38 @@ import { NoticesComponent } from './views/home/notices/notices.component'
 import { InstitutionalAlliesComponent } from './views/home/institutional-allies/institutional-allies.component'
 import { ContributingAlliesComponent } from './views/home/contributing-allies/contributing-allies.component'
 import { OurProfComponent } from './views/home/our-prof/our-prof.component'
+import { OurProfAdminComponent } from './views/admin/our-prof-admin/our-prof-admin.component'
+import { LoginComponent } from './views/auth/login/login.component'
+import { AuthGuard } from './core/guards/auth.guard'
 
 export const routes: Routes = [
-  // {
-  //   path: 'admin',
-  //   component: AdminComponent,
-  //   children: [
-  //     {
-  //       path: '',
-  //       component: MainComponent
-  //     },
-  //     {
-  //       path: 'notices',
-  //       component: NoticesAdminFixComponent
-  //     },
-  //     {
-  //       path: 'contact',
-  //       component: ContactAdminComponent
-  //     }
-  //   ]
-  // },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: MainComponent
+      },
+      {
+        path: 'notices',
+        component: NoticesAdminFixComponent
+      },
+      {
+        path: 'contact',
+        component: ContactAdminComponent
+      },
+      {
+        path: 'our-prof',
+        component: OurProfAdminComponent
+      }
+    ]
+  },
   {
     path: 'home',
     component: HomeComponent,
+
     children: [
       {
         path: '',
@@ -78,7 +87,10 @@ export const routes: Routes = [
       }
     ]
   },
-
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: '',
     redirectTo: 'home',

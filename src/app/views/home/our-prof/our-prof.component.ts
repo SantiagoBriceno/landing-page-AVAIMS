@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Member } from '../../../../types'
-import { OurProfService } from './our-prof.service'
+import { OurProfService } from '../../../core/services/our-prof.service'
 import { FormsModule } from '@angular/forms'
 
 @Component({
@@ -12,21 +12,24 @@ import { FormsModule } from '@angular/forms'
 export class OurProfComponent implements OnInit {
   public membersExample: Member[] = [
     {
-      id: '67cccf526b66040ac0681660',
+      nro: '1',
+      _id: '67cccf526b66040ac0681660',
       profession: 'Arquitecto',
       name: 'Araque Contreras',
       email: 'aldryarq@gmail.com',
       location: 'Ejido, Venezuela'
     },
     {
-      id: '67cccf526b66040ac0681669',
+      nro: '2',
+      _id: '67cccf526b66040ac0681669',
       profession: 'Arquitecto',
       name: 'Camposano Montes',
       email: 'camposanomania@gmail.com',
       location: 'Los Teques, Venezuela'
     },
     {
-      id: '67cccf526b66040ac068166a',
+      nro: '3',
+      _id: '67cccf526b66040ac068166a',
       profession: 'Ingeniero',
       name: 'Gilberto Matheus Rivas',
       email: 'gmr732@hotmail.com',

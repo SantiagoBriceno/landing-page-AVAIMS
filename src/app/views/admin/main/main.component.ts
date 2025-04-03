@@ -38,12 +38,27 @@ export class MainComponent implements OnInit {
     })
   }
 
-  onDeleteNotice (id: string): void {
-    this.noticeFormService.deleteNotice(id).subscribe(() => {
-      this.notices = this.notices.filter((notice) => notice.id !== id)
-    },
-    (error: any) => {
-      console.error(error)
+  onDeleteNotice (myNotice: Notice): void {
+    console.log('ID de la noticia a eliminar:', myNotice._id)
+    this.noticeFormService.deleteNotice(myNotice._id ?? '').subscribe({
+      next: (response) => {
+        console.log('Noticia eliminada:', response)
+        this.notices = this.notices.filter((notice) => notice._id !== myNotice._id)
+        this.showAlert = false
+        // Si se borra del backend Queda borrar la imagen del frontend
+
+        this.noticeFormService.deleteNoticeImages(myNotice.img).subscribe({
+          next: (response) => {
+            console.log('Imagen eliminada:', response)
+          },
+          error: (error) => {
+            console.error('Error al eliminar la imagen:', error)
+          }
+        })
+      },
+      error: (error) => {
+        console.error('Error al eliminar la noticia:', error)
+      }
     })
   }
 }

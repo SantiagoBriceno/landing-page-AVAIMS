@@ -14,27 +14,35 @@ import { MyAlertComponent } from '../../../shared/my-alert/my-alert.component'
 })
 export class CardAdminComponent {
   @Input() notice: Notice = {
-    id: '',
+    _id: '',
     title: '',
     description: '',
     img: '',
     date: new Date()
   }
 
-  @Output() deleteId: EventEmitter<string> = new EventEmitter<string>()
+  @Output() deleteId: EventEmitter<Notice> = new EventEmitter<Notice>()
 
   showAlert: boolean = false
   deleteMessageAlert: string = '¿Estás seguro de eliminar la noticia?'
   selectedId: string = ''
+  selectedNotice: Notice = {
+    _id: '',
+    title: '',
+    description: '',
+    img: '',
+    date: new Date()
+  }
 
-  handleDelete (id: string): void {
+  handleDelete (notice: Notice): void {
     this.showAlert = true
-    this.selectedId = id
+    this.selectedId = notice._id ?? ''
+    this.selectedNotice = notice
   }
 
   onDelete (): void {
     this.showAlert = true
-    this.deleteId.emit(this.selectedId)
+    this.deleteId.emit(this.selectedNotice)
   }
 
   onConfirm (): void {

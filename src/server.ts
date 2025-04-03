@@ -4,11 +4,11 @@ import {
   isMainModule,
   writeResponseToNodeResponse
 } from '@angular/ssr/node'
-import express from 'express'
+import express, { json } from 'express'
 import fileUpload from 'express-fileupload'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { saveNoticeImages } from './app/core/controller/notice.controller'
+import { deleteNoticeImages, saveNoticeImages } from './app/core/controller/notice.controller'
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url))
 const browserDistFolder = resolve(serverDistFolder, '../browser')
@@ -18,6 +18,15 @@ const angularApp = new AngularNodeAppEngine()
 
 app.use('/api/**', (req, res, next) => {
   next()
+  console.log('API request:', req.method, req.url)
+})
+
+app.post('/api/notices/delete', json(), deleteNoticeImages)
+
+app.get('/api/notices', (req, res) => {
+  res.json({
+    message: 'Hello from the API!'
+  })
 })
 
 app.post('/api/notices', fileUpload({
@@ -25,11 +34,6 @@ app.post('/api/notices', fileUpload({
 }),
 saveNoticeImages
 )
-
-// app.use('/api/sponsor', sponsorRouter)
-
-// app.use('/api/contact-us', contactRouter)
-
 /**
  * Serve static files from /browser
  */

@@ -1,5 +1,5 @@
 export interface Notice {
-  id?: string
+  _id?: string
   title: string
   description: string
   date: Date
@@ -31,7 +31,7 @@ export interface Contact {
 }
 
 export interface Member {
-  id?: string
+  _id?: string
   nro?: string
   profession: string
   name: string

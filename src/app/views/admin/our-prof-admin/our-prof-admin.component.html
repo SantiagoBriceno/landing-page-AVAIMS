@@ -1,0 +1,97 @@
+<div class="flex grouper">
+  <div>
+    <h1>Formulario de miembros</h1>
+    <form [formGroup]="profForm" (ngSubmit)="onSubmit()">
+      <div class="flex grouper">
+        <div class="form-group">
+          <label for="nro">Nro</label>
+          <input type="text" id="nro" formControlName="nro">
+          @if (profForm.get('nro')?.invalid && (profForm.get('nro')?.dirty || profForm.get('nro')?.touched)){
+          <div class="error-message">
+            Título es requerido.
+          </div>
+          }
+        </div>
+        <div class="form-group">
+          <label for="name">Nombre Completo</label>
+          <input id="name" formControlName="name">
+          @if (
+          profForm.get('name')?.invalid && (profForm.get('name')?.dirty ||
+          profForm.get('name')?.touched)
+          ) {
+          <div class="error-message">
+            Descripción es requerida.
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="profession">Profesión</label>
+        <input type="text" id="profession" formControlName="profession">
+        @if (
+        profForm.get('profession')?.invalid && (profForm.get('profession')?.dirty ||
+        profForm.get('profession')?.touched)
+        ) {
+        <div class="error-message">
+          Fecha es requerida.
+        </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="location">Dirección corta</label>
+        <input required type="text" id="location" formControlName="location">
+        @if (
+        profForm.get('location')?.invalid && (profForm.get('location')?.dirty || profForm.get('location')?.touched)
+        ) {
+        <div class="error-message">
+          Dirección corta es requerida
+        </div>
+        }
+      </div>
+      <div class="form-group">
+        <label for="email">Email de contacto</label>
+        <input type="text" id="email" formControlName="email">
+      </div>
+      <div class="form-controller">
+        <button class="my-button" type="submit" [disabled]="profForm.invalid">{{isEdit ? 'Editar' : 'Crear'}}</button>
+      </div>
+    </form>
+  </div>
+  <div class="half-width">
+    <h1>Lista de Miembros activos</h1>
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Nro</th>
+          <th>Nombre Completo</th>
+          <th class="action-th">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (prof of myMembers; track $index) {
+        <tr>
+          <td>{{ prof.nro }}</td>
+          <td>{{ prof.name }}</td>
+          <td class="actions">
+            <button class="my-button" (click)="onEdit(prof)">Editar</button>
+            <button class="my-button delete" (click)="onDelete(prof)">Eliminar</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+
+    <div class="table-controller">
+      <button class="my-button" (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+      <span>{{currentPage}} / {{totalPages}}</span>
+      <button class="my-button" (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
+    </div>
+  </div>
+</div>
+
+<app-toast></app-toast>
+
+<app-my-alert (cancel)="handleCancel()" (confirm)="handleDelete()"
+  message="¿Estas seguro que quieres eliminar a este miembro?" [show]="showAlert"></app-my-alert>

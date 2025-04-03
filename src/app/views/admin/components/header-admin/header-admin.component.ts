@@ -1,4 +1,6 @@
 import { Component } from '@angular/core'
+import { AuthService } from '../../../auth/auth.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-header-admin',
@@ -8,8 +10,14 @@ import { Component } from '@angular/core'
   styleUrl: './header-admin.component.scss'
 })
 export class HeaderAdminComponent {
+  constructor (private readonly authService: AuthService, private readonly router: Router) {}
   user = {
-    name: 'Santiago Briceño',
+    name: 'AVAIMS 2025',
     role: 'Administrador'
+  }
+
+  logout (): void {
+    this.authService.removeToken()
+    void this.router.navigate(['/home'])
   }
 }

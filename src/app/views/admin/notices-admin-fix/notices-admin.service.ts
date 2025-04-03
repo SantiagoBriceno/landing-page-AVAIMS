@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { Notice } from '../../../../types'
@@ -8,7 +8,7 @@ import { environment } from '../../../../environments/environment.development'
   providedIn: 'root'
 })
 export class NoticeFormService {
-  constructor (private readonly http: HttpClient) {}
+  constructor (private readonly http: HttpClient, @Inject(PLATFORM_ID) private readonly platformId: Object) {}
 
   createNotice (notice: Notice): Observable<any> {
     return this.http.post<any>(`${environment.API_URL}/notices`, { notice })
@@ -26,5 +26,11 @@ export class NoticeFormService {
     const newFormData = new FormData()
     newFormData.append('img', image, image.name)
     return this.http.post<any>('/api/notices', newFormData)
+  }
+
+  deleteNoticeImages (imageName: string): Observable<any> {
+    return this.http.post<any>('/api/notices/delete', {
+      image: imageName
+    })
   }
 }
