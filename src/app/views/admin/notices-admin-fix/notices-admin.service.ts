@@ -25,11 +25,11 @@ export class NoticeFormService {
   saveNoticeImages (image: File): Observable<any> {
     const newFormData = new FormData()
     newFormData.append('img', image, image.name)
-    return this.http.post<any>('/api/notices', newFormData)
+    return this.http.post<any>('https://avaims.com/api/v1/notices', newFormData)
   }
 
   deleteNoticeImages (imageName: string): Observable<any> {
-    return this.http.post<any>('/api/notices/delete', {
+    return this.http.post<any>('https://avaims.com/api/v1/notices', {
       image: imageName
     })
   }

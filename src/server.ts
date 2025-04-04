@@ -5,10 +5,9 @@ import {
   writeResponseToNodeResponse
 } from '@angular/ssr/node'
 import express, { json } from 'express'
-import fileUpload from 'express-fileupload'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { deleteNoticeImages, saveNoticeImages } from './app/core/controller/notice.controller'
+import { deleteNoticeImages } from './app/core/controller/notice.controller'
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url))
 const browserDistFolder = resolve(serverDistFolder, '../browser')
@@ -29,11 +28,11 @@ app.get('/api/notices', (req, res) => {
   })
 })
 
-app.post('/api/notices', fileUpload({
-  createParentPath: true
-}),
-saveNoticeImages
-)
+// app.post('/api/notices', fileUpload({
+//   createParentPath: true
+// }),
+// saveNoticeImages
+// )
 /**
  * Serve static files from /browser
  */
@@ -64,7 +63,7 @@ app.use(express.static('public'))
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
 if (isMainModule(import.meta.url)) {
-  const port = process.env.PORT ?? 4000
+  const port = process.env.PORT ?? 8080
   app.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`)
   })
