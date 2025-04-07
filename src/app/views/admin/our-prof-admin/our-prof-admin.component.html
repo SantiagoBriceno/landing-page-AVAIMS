@@ -71,6 +71,11 @@
         </tr>
       </thead>
       <tbody>
+        @if (myMembers.length === 0) {
+        <tr>
+          <td colspan="3" class="no-data">No hay datos disponibles</td>
+        </tr>
+        }
         @for (prof of myMembers; track $index) {
         <tr>
           <td>{{ prof.nro }}</td>
@@ -84,11 +89,14 @@
       </tbody>
     </table>
 
+    @if (myMembers.length !== 0) {
     <div class="table-controller">
       <button class="my-button" (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
       <span>{{currentPage}} / {{totalPages}}</span>
       <button class="my-button" (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
     </div>
+    }
+
   </div>
 </div>
 

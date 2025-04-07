@@ -1,10 +1,10 @@
 import { Component } from '@angular/core'
 import { AuthService } from '../../../auth/auth.service'
-import { Router } from '@angular/router'
+import { Router, RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-header-admin',
-  imports: [],
+  imports: [RouterModule],
   standalone: true,
   templateUrl: './header-admin.component.html',
   styleUrl: './header-admin.component.scss'

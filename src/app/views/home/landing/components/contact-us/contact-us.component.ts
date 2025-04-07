@@ -47,14 +47,19 @@ export class ContactUsComponent {
       last_name: this.myFormContact.value.lastName,
       email: this.myFormContact.value.email,
       phone: this.myFormContact.value.phone,
-      message: this.myFormContact.value.message
+      message: this.myFormContact.value.message,
+      created_at: new Date(),
+      status: 0
     }
     this.contactUsService.sendContactUsMessage(newContactData).subscribe(
       (response) => {
-        console.log('Mensaje enviado')
+        console.log('Mensaje enviado correctamente:', response)
+        this.myFormContact.reset()
+        alert('Mensaje enviado correctamente')
       },
       (error) => {
         console.error(error)
+        alert('Error al enviar el mensaje')
       })
   }
 }

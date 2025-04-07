@@ -19,7 +19,7 @@ export interface Sponsor {
 }
 
 export interface Contact {
-  id?: string
+  _id?: string
   affair: string
   name: string
   last_name: string

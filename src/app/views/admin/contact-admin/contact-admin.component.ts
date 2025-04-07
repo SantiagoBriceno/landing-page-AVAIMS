@@ -25,5 +25,12 @@ export class ContactAdminComponent {
 
   showMessageDetails (message: Contact): void {
     this.selectedMessage = message
+    console.log('Mensaje seleccionado:', message)
+    if (message.status === 0) {
+      this.contactAdminService.updateContactStatus(message._id).subscribe(() => {
+        console.log('Estado actualizado')
+        message.status = 1
+      })
+    }
   }
 }

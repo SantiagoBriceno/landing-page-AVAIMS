@@ -48,7 +48,7 @@ export class OurProfComponent implements OnInit {
   sortColumn: string | null = null
   sortDirection: 'asc' | 'desc' | null = null
 
-  pageSize: number = 15 // Número de elementos por página
+  pageSize: number = 12 // Número de elementos por página
   currentPage: number = 1
   totalPages: number = 0
 

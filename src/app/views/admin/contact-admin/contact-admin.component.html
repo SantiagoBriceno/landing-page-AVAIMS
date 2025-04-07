@@ -3,6 +3,7 @@
     @for (message of messages; track $index) {
     <li (click)="showMessageDetails(message)">
       {{ message.affair }} - {{ message.name }} {{ message.last_name }}
+      <i class="fa-regular fa-circle" [class.pending]="message.status === 0"></i>
     </li>
     }
 

@@ -12,4 +12,8 @@ export class ContactAdminService {
   getAllContacts (): Observable<any> {
     return this.http.get<any>(`${environment.API_URL}/contacts`)
   }
+
+  updateContactStatus (id: string = ''): Observable<any> {
+    return this.http.patch<any>(`${environment.API_URL}/contacts/${id}`, { status: 1 })
+  }
 }
