@@ -45,6 +45,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+
       ul {
         display: flex;
         list-style: none;
@@ -137,7 +138,7 @@
   }
 }
 
-.long-name span{
+.long-name span {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -153,7 +154,7 @@
   &:nth-child(3) {
     animation: fadeInSlideUp 0.5s ease-out forwards 1.6s;
   }
-  
+
 }
 
 @keyframes fadeInSlideUp {
@@ -165,6 +166,16 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1600px) {
+  .header-container nav .nav-items {
+    width: 40%;
+  }
+
+  .long-name {
+    display: none;
   }
 }
 

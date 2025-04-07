@@ -1,6 +1,6 @@
 <div #newsCard class="news-card">
   <div class="image-container">
-    <img [src]="notice.img ? notice.img : 'images/notices/team.png'" alt="Noticia">
+    <img [src]="notice.img ? 'https://avaims.com/api/v1/public/' + notice.img : 'https://avaims.com/api/v1/public/images/notices/team.png'" alt="Noticia">
   </div>
   <div class="content">
     <h2>{{notice.title}}</h2>

@@ -1,7 +1,7 @@
 <div #newsCard class="news-card" [@fadeIn]="admin ? 'final': animationState" (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()">
   <div class="image-container">
-    <img [src]="selectedImage ? selectedImage : notice.img ? notice.img : 'images/notices/team.png'" alt="Noticia">
+    <img [src]="selectedImage ? selectedImage : notice.img ? 'https://avaims.com/api/v1/public/'+ notice.img : 'https://avaims.com/api/v1/public/images/notices/team.png'" alt="Noticia">
   </div>
 
   <div class="content">
