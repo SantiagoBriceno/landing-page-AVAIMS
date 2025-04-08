@@ -191,3 +191,23 @@ body {
 .margin-right{
   margin-right:3rem;
 }
+
+.my-input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  /* Ancho máximo para evitar que se extienda demasiado */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  /* Incluye el padding y el borde en el ancho total */
+}
+
+.my-input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  /* Cambia el color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Agrega una sombra sutil al enfocar */
+}

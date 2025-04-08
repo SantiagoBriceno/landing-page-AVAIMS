@@ -14,8 +14,8 @@ export class OurProfService {
     return this.http.get<any>(environment.API_URL + '/members')
   }
 
-  getMembersPaginated (page: number, limit: number): Observable<any> {
-    return this.http.get<any>(environment.API_URL + `/members/paginated?page=${page}&limit=${limit}`)
+  getMembersPaginated (page: number, limit: number, filter: string = ''): Observable<any> {
+    return this.http.get<any>(environment.API_URL + `/members/paginated?page=${page}&limit=${limit}&filter=${filter}`)
   }
 
   createMember (member: Member): Observable<any> {

@@ -18,6 +18,7 @@ import { MyAlertComponent } from '../../shared/my-alert/my-alert.component'
 })
 export class OurProfAdminComponent implements OnInit {
   profForm: FormGroup
+  searchTerm: string = ''
   myMembers: Member[] = [
     {
       nro: '1',
@@ -53,7 +54,7 @@ export class OurProfAdminComponent implements OnInit {
   totalPages: number = 0
   showAlert: boolean = false
 
-  constructor (private readonly fb: FormBuilder, private readonly toastService: ToastService, private readonly ourProfService: OurProfService) {
+  constructor(private readonly fb: FormBuilder, private readonly toastService: ToastService, private readonly ourProfService: OurProfService) {
     this.profForm = this.fb.group({
       nro: ['', Validators.required],
       name: ['', Validators.required],
@@ -63,11 +64,11 @@ export class OurProfAdminComponent implements OnInit {
     })
   }
 
-  ngOnInit (): void {
+  ngOnInit(): void {
     this.loadMembers()
   }
 
-  onSubmit (): void {
+  onSubmit(): void {
     if (!this.profForm.valid) {
       this.toastService.showToast('Por favor completa todos los campos requeridos', 'error', 3000)
       return
@@ -96,9 +97,11 @@ export class OurProfAdminComponent implements OnInit {
       this.editId = ''
     } else {
       this.ourProfService.createMember(this.profForm.value).subscribe((response) => {
+        console.log(response)
         if (response !== undefined && response !== null) {
           this.toastService.showToast('Miembro creado correctamente', 'success', 3000)
-          this.myMembers.push(response.data)
+          this.lastPage()
+
         } else {
           this.toastService.showToast('Error al crear el miembro', 'error', 3000)
         }
@@ -113,7 +116,7 @@ export class OurProfAdminComponent implements OnInit {
     this.editId = ''
   }
 
-  onEdit (member: Member): void {
+  onEdit(member: Member): void {
     this.profForm.patchValue({
       nro: member.nro,
       name: member.name,
@@ -129,14 +132,15 @@ export class OurProfAdminComponent implements OnInit {
     this.profForm.updateValueAndValidity()
   }
 
-  onDelete (member: Member): void {
+  onDelete(member: Member): void {
     this.showAlert = true
     this.deleteId = member._id as string
   }
 
-  handleDelete (): void {
+  handleDelete(): void {
     this.ourProfService.deleteMember(this.deleteId).subscribe((response) => {
-      if (response !== undefined && response !== null && response.deletedCount > 0) {
+      console.log(response)
+      if (response !== undefined && response !== null) {
         this.toastService.showToast('Miembro eliminado correctamente', 'success', 3000)
         this.myMembers = this.myMembers.filter((member) => member._id !== this.deleteId)
       } else {
@@ -145,27 +149,44 @@ export class OurProfAdminComponent implements OnInit {
     })
   }
 
-  handleCancel (): void {
+  handleCancel(): void {
     this.showAlert = false
     this.deleteId = ''
   }
 
-  nextPage (): void {
+  nextPage(): void {
     if (this.currentPage < this.totalPages) {
       this.currentPage++
       this.loadMembers()
     }
   }
 
-  prevPage (): void {
+  prevPage(): void {
     if (this.currentPage > 1) {
       this.currentPage--
       this.loadMembers()
     }
   }
 
-  loadMembers (): void {
+  lastPage(): void {
+    this.currentPage = this.totalPages
+    this.loadMembers()
+  }
+
+  loadMembers(): void {
     this.ourProfService.getMembersPaginated(this.currentPage, this.itemsPerPage).subscribe((response) => {
+      this.myMembers = response.members
+      this.totalPages = response.totalPageCount
+    })
+  }
+
+  onSearch(event: any): void {
+    this.searchTerm = event.target.value
+    this.currentPage = 1
+    console.log(this.searchTerm)
+    console.log(this.currentPage)
+    console.log(event)
+    this.ourProfService.getMembersPaginated(this.currentPage, this.itemsPerPage, this.searchTerm).subscribe((response) => {
       this.myMembers = response.members
       this.totalPages = response.totalPageCount
     })

@@ -61,6 +61,7 @@
   </div>
   <div class="half-width">
     <h1>Lista de Miembros activos</h1>
+    <input type="text" placeholder="Buscar por nombre" class="my-input" (input)="onSearch($event)" [value]="searchTerm">
     <table class="table table-striped table-bordered table-hover">
       <thead>
         <tr>
