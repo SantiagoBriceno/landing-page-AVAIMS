@@ -171,12 +171,17 @@
 
 @media (max-width: 1600px) {
   .header-container nav .nav-items {
-    width: 40%;
+    width: 33%;
   }
 
   .long-name {
-    display: none;
+    font-size: .8rem
   }
+
+  .header-container nav .nav-items ul {
+    gap: 10px;
+  }
+
 }
 
 @media (max-width: 1500px) {
