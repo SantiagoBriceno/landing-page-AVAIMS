@@ -1,9 +1,10 @@
-<div class="dropdown">
-  <div (click)="toggleMenu()" class="dropdown-button">{{ buttonText }}</div>
+<div class="dropdown" (mouseenter)="openMenu()">
+  <div class="dropdown-button">{{ buttonText }}</div>
   @if (isOpen) {
-  <div class="dropdown-content">
+  <div class="dropdown-content" (mouseenter)="openMenu()">
     @for (option of options; track $index) {
-    <a [routerLink]="option.link" routerLinkActive="activeLink" ariaCurrentWhenActive="page" (click)="selectOption(option.link)">
+    <a [routerLink]="option.link" routerLinkActive="activeLink" ariaCurrentWhenActive="page"
+      (click)="selectOption(option.link)">
       {{ option.label }}
     </a>}
 

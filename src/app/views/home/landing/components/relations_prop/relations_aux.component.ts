@@ -60,7 +60,7 @@ export class RelationsComponent {
     },
     {
       title: 'APAES',
-      src: 'https://www.apaesvirtual.com/wp-content/uploads/2022/07/13686719_1046678188714576_5316920995165925944_n.png',
+      src: 'https://apaesvirtual.com/wp-content/uploads/2022/07/13686719_1046678188714576_5316920995165925944_n.png',
       alt: 'APAES Logo',
       url: 'https://www.apaesvirtual.com/es/inicio/'
     },
@@ -75,11 +75,6 @@ export class RelationsComponent {
       src: 'https://aarqhos.cl/wp-content/uploads/2024/08/Logo-AARQHOS-v1-1536x266.png',
       alt: 'AARQHOS Logo',
       url: 'https://aarqhos.cl/'
-    },
-    {
-      title: 'CCCG',
-      src: 'https://www.cirag.cu/wp-content/uploads/2018/04/Identificador-CCCG-blaco.png',
-      alt: 'CCCG Logo'
     },
     {
       title: 'CCAIH',
@@ -144,11 +139,6 @@ export class RelationsComponent {
       src: 'https://aarqhos.cl/wp-content/uploads/2024/08/Logo-AARQHOS-v1-1536x266.png',
       alt: 'AARQHOS Logo',
       url: 'https://aarqhos.cl/'
-    },
-    {
-      title: 'CCCG',
-      src: 'https://www.cirag.cu/wp-content/uploads/2018/04/Identificador-CCCG-blaco.png',
-      alt: 'CCCG Logo'
     },
     {
       title: 'CCAIH',

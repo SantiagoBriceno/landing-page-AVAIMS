@@ -20,6 +20,14 @@ export class DropdownComponent {
     this.isOpen = !this.isOpen
   }
 
+  openMenu (): void {
+    this.isOpen = true
+  }
+
+  closeMenu (): void {
+    this.isOpen = false
+  }
+
   selectOption (link: string): void {
     console.log('Navigating to', link)
     this.isOpen = false

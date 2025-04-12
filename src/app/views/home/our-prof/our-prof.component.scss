@@ -97,6 +97,21 @@ input[type="text"]:focus {
   cursor: pointer;
 }
 
+.th-nro{
+  width: 5px;
+}
+
+.th-name{
+  width: 200px;
+}
+
+.th-prof{
+  width: 100px;
+}
+.th-email{
+  width: 10px
+}
+
 @media screen and (max-width: 600px) {
 
   p{

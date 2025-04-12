@@ -1,11 +1,18 @@
 <section class="contributing-container flex column align-center">
   <div class="title-container">
-    <h1 class="title text-center">Aliados Contribuyentes</h1>
+    <h1 class="title text-center">Miembros Contribuyentes</h1>
   </div>
-
-  <div class="flex wrap justify-center align-center grouper brand-content">
-    @for (allies of ourAllies; track $index) {
-    <app-brand-container class="margin-right" [brand]="allies" [complete]="true"></app-brand-container>
+  <div class="image-list">
+    @for (ally of ourAllies; track $index) {
+    <div class="image-item">
+      <div class="image-container">
+        <img [src]="ally.img" [alt]="ally.title">
+      </div>
+      <div class="info-container">
+        <h3>{{ ally.title }}</h3>
+        <p>{{ ally.description }}</p>
+      </div>
+    </div>
     }
   </div>
 </section>

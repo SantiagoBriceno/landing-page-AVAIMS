@@ -1,12 +1,11 @@
-<div #brandContainer class="brand-item" [class.complete]="complete" [title]="brand.title" [@fadeIn]="animationState" (mouseenter)="onMouseEnter()"
-  (mouseleave)="onMouseLeave()">
+<div #brandContainer class="brand-item" [class.complete]="complete" [title]="brand.title" [@fadeIn]="animationState"
+  (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
   <a target="_blank" [href]="brand.url">
     <img class="brand" [src]="brand.img" />
   </a>
   @if (complete) {
-    <div class="brand-title">
-      <h3>{{brand.title}}</h3>
-      <p>{{brand.description}}</p>
-    </div>
+  <div class="brand-title">
+    <h3>{{brand.title}}</h3>
+  </div>
   }
 </div>

@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { Sponsor } from '../../../../types'
 import { InstitutionalAlliesService } from './institutional-allies.service'
-import { BrandContainerComponent } from '../../shared/brand-container/brand-container.component'
 
 @Component({
   selector: 'app-institutional-allies',
-  imports: [BrandContainerComponent],
   templateUrl: './institutional-allies.component.html',
   styleUrl: './institutional-allies.component.scss'
 })

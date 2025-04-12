@@ -107,9 +107,18 @@
   background-color: #0056b3;
 }
 
+.super-title {
+  color: #f4f6f1
+}
+
 /* Estilos responsivos */
 @media (max-width: 768px) {
   .admision {
+    .content {
+      width: 100%;
+      padding: 0 10px;
+    }
+
     .container {
       h2 {
         font-size: 1.8rem; // Ajustado para pantallas pequeñas
