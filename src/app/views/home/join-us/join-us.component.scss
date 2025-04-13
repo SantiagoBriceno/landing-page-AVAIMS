@@ -4,8 +4,7 @@
 }
 
 .admision .admision-title {
-  text-align: center;
-  background-image: url('../../../../../public/images/assets/render-avaims.webp');
+  background-image: url('../../../../../public/images/carrousel/fondo3.webp');
   background-size: cover;
   background-position: center;
   background-color: rgba(29, 27, 27, 0.8);
@@ -19,6 +18,13 @@
   /* Animación FadeIn */
   opacity: 0;
   /* Inicialmente oculto */
+  h1{
+    text-align: center;
+  }
+
+  p{
+    text-align: justify;
+  }
 }
 
 .admision-title {
@@ -33,6 +39,7 @@
 .admision .admision-title .content p {
   opacity: 0;
   /* Inicialmente oculto */
+  text-align: justify;
 }
 
 .admision .admision-title .content h1 {
@@ -54,7 +61,7 @@
 .admision .container h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: justify;
   color: #333;
 }
 
@@ -62,6 +69,7 @@
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 30px;
+  text-align: justify;
   color: #555;
 }
 
