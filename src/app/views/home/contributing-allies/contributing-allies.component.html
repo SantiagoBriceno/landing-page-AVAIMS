@@ -4,6 +4,19 @@
   </div>
   <div class="image-list">
     @for (ally of ourAllies; track $index) {
+    @if (ally.url !== '' && ally.url !== null) {
+    <a [href]="ally.url" target="_blank" rel="noopener noreferrer">
+      <div class="image-item">
+        <div class="image-container">
+          <img [src]="ally.img" [alt]="ally.title">
+        </div>
+        <div class="info-container">
+          <h3>{{ ally.title }}</h3>
+          <p>{{ ally.description }}</p>
+        </div>
+      </div>
+    </a>
+    }@else {
     <div class="image-item">
       <div class="image-container">
         <img [src]="ally.img" [alt]="ally.title">
@@ -13,6 +26,7 @@
         <p>{{ ally.description }}</p>
       </div>
     </div>
+    }
     }
   </div>
 </section>
