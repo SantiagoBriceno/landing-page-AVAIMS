@@ -1,0 +1,13 @@
+<div class="allie-card">
+  @if (allie.img) {
+  <div class="image-container">
+    <img [src]="allie.img" [alt]="allie.name">
+  </div>
+  }
+  <div class="info-container">
+    <h3>{{ allie.name }}</h3>
+    @if (allie.description) {
+    <p>{{ allie.description }}</p>
+    }
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<section class="honorary-allies-section">
+  <h1 class="title">Miembros Honorarios</h1>
+  <div class="list">
+    @for (allie of honoraryAllies; track $index) {
+    <app-honorary-allie-card [allie]="allie"></app-honorary-allie-card>
+    }
+
+  </div>
+</section>

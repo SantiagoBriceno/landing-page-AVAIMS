@@ -18,6 +18,12 @@ export interface Sponsor {
   img: string
 }
 
+export interface HonoraryAllie {
+  name: string
+  description: string | null
+  img?: string
+}
+
 export interface Contact {
   _id?: string
   affair: string

@@ -15,6 +15,7 @@ import { OurProfComponent } from './views/home/our-prof/our-prof.component'
 import { OurProfAdminComponent } from './views/admin/our-prof-admin/our-prof-admin.component'
 import { LoginComponent } from './views/auth/login/login.component'
 import { AuthGuard } from './core/guards/auth.guard'
+import { HonoraryAlliesComponent } from './views/home/honorary-allies/honorary-allies.component'
 
 export const routes: Routes = [
   {
@@ -84,6 +85,11 @@ export const routes: Routes = [
         path: 'our-allies/professional',
         component: OurProfComponent,
         title: 'AVAIMS | Nuestros Profesionales'
+      },
+      {
+        path: 'our-allies/honorary-allies',
+        component: HonoraryAlliesComponent,
+        title: 'AVAIMS | Nuestros Honorarios'
       }
     ]
   },

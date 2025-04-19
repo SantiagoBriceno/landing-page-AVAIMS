@@ -43,7 +43,8 @@ export class HeaderComponent {
   public dropDownLinkAllies: Array<{ label: string, link: string }> = [
     { label: 'Activos', link: 'our-allies/professional' },
     { label: 'Contribuyentes', link: 'our-allies/contributing-allies' },
-    { label: 'Institucionales', link: 'our-allies/institutional-allies' }
+    { label: 'Institucionales', link: 'our-allies/institutional-allies' },
+    { label: 'Honorarios', link: 'our-allies/honorary-allies' }
   ]
 
   public longNameText: string = 'Asociación Venezolana de Arquitectura e Ingeniería Médico Sanitaria (AVAIMS)'

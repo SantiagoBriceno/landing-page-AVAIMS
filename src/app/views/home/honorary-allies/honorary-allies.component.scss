@@ -1,0 +1,49 @@
+@mixin fadeIn($delay) {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in-out forwards;
+  animation-delay: $delay;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.honorary-allies-section {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .list {
+    >* {
+      @for $i from 1 through 12 {
+        &:nth-child(#{$i}) {
+          @include fadeIn(calc(0.25s * #{$i}));
+        }
+      }
+    }
+  }
+}
+
+app-honorary-allie-card {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
