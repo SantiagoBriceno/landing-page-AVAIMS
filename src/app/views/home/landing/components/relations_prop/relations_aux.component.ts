@@ -112,7 +112,7 @@ export class RelationsComponent {
   public horizontalLogos: Logo[] = [
     {
       title: 'ACOAIH',
-      src: 'https://acoaihcr.com/imagenes/logo.webp',
+      src: 'images/sponsors/relations/acoaih.png',
       alt: 'ACOAIH Logo',
       url: 'https://acoaihcr.com/'
     },

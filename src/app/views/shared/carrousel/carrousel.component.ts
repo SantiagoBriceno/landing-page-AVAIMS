@@ -14,9 +14,9 @@ import { SwiperOptions } from 'swiper/types'
 })
 export class CarrouselComponent implements AfterViewInit {
   items: string[] = [
-    'images/carrousel/fondo1.jpg',
-    'images/carrousel/fondo2.webp',
-    'images/carrousel/fondo3.webp'
+    'images/carrousel/team.jpg',
+    'images/carrousel/fondo5.jpg',
+    'images/carrousel/fondo4.jpg'
   ]
 
   swiperOptions: SwiperOptions = {

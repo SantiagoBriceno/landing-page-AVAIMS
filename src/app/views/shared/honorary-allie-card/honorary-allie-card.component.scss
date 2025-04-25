@@ -1,7 +1,9 @@
 .allie-card {
   display: flex;
-  flex-direction: row; /* Por defecto, los elementos se alinean en fila */
-  align-items: center; /* Centrar verticalmente los elementos */
+  flex-direction: row;
+  /* Por defecto, los elementos se alinean en fila */
+  align-items: center;
+  /* Centrar verticalmente los elementos */
   padding: 16px;
   margin-bottom: 16px;
   border: 1px solid #eee;
@@ -13,36 +15,54 @@
 
   .image-container {
     margin-right: 25px;
+
     img {
       width: 120px;
       height: 120px;
-      border-radius: 50%; /* Hacer la imagen circular */
-      object-fit: cover; /* Recortar la imagen para que se ajuste al círculo */
+      border-radius: 50%;
+      /* Hacer la imagen circular */
+      object-fit: cover;
+      /* Recortar la imagen para que se ajuste al círculo */
     }
   }
 
   .info-container {
-    flex-grow: 1; /* El contenedor de información ocupa el espacio restante */
+    flex-grow: 1;
+
+    /* El contenedor de información ocupa el espacio restante */
     h3 {
       margin-top: 0;
       margin-bottom: 8px;
     }
+
     .no-description {
       font-style: italic;
       color: #777;
     }
   }
 
+  p {
+    margin: 0;
+    font-size: 14px;
+    /* Tamaño de fuente más pequeño para el texto */
+    line-height: 1.8;
+    /* Espaciado entre líneas */
+  }
+
   /* Media query para dispositivos móviles (ancho máximo de 768px) */
   @media (max-width: 768px) {
-    flex-direction: column; /* Apilar la imagen y la información en columnas */
-    align-items: flex-start; /* Alinear los elementos a la izquierda */
+    flex-direction: column;
+    /* Apilar la imagen y la información en columnas */
+    align-items: flex-start;
+    /* Alinear los elementos a la izquierda */
 
     .image-container {
       margin-right: 0;
       margin-bottom: 12px;
+
       img {
-        width: 100px; /* Hacer la imagen un poco más grande en móviles */
+        width: 100px;
+        /* Hacer la imagen un poco más grande en móviles */
         height: 100px;
       }
     }

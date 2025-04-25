@@ -19,6 +19,7 @@ export interface Sponsor {
 }
 
 export interface HonoraryAllie {
+  id: number
   name: string
   description: string | null
   img?: string

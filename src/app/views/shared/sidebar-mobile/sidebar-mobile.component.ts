@@ -21,8 +21,9 @@ export class SidebarMobileComponent {
 
   ourAlliesOptions: Array<{ label: string, link: string }> = [
     { label: 'Profesionales', link: '/home/our-allies/professional' },
-    { label: 'Aliados Contribuyentes', link: '/home/our-allies/contributing-allies' },
-    { label: 'Aliados Institucionales', link: '/home/our-allies/institutional-allies' }
+    { label: 'Miembros Contribuyentes', link: '/home/our-allies/contributing-allies' },
+    { label: 'Miembros Institucionales', link: '/home/our-allies/institutional-allies' },
+    { label: 'Miembros Honorarios', link: '/home/our-allies/honorary-allies' }
   ]
 
   isOpenSubmenuAboutUs: boolean = false
