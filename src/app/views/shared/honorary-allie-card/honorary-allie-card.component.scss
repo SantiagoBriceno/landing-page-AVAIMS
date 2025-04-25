@@ -53,7 +53,8 @@
   @media (max-width: 768px) {
     flex-direction: column;
     /* Apilar la imagen y la información en columnas */
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     /* Alinear los elementos a la izquierda */
 
     .image-container {
