@@ -43,18 +43,25 @@ export class HonoraryAlliesComponent {
     {
       id: 7,
       name: 'Msc. Omar Arias',
-      description: 'Magister en física médica. Miembro de la junta directiva de la sociedad venezolana de protección radiológica. Miembro honorario de la asociación venezolana de arquitectura e ingeniería médico sanitaria AVAIMS Director de serofca. Profesor de la escuela de salud pública de la facultad de medicina de la Universidad Central de Venezuela. Especialización en gerencia y organización de empresas UCV. Especialización en Data Science Harvard University.'
+      description: 'Magister en física médica. Miembro de la junta directiva de la sociedad venezolana de protección radiológica. Miembro honorario de la asociación venezolana de arquitectura e ingeniería médico sanitaria AVAIMS Director de serofca. Profesor de la escuela de salud pública de la facultad de medicina de la Universidad Central de Venezuela. Especialización en gerencia y organización de empresas UCV. Especialización en Data Science Harvard University.',
+      img: 'images/sponsors/honorarios/omar.webp'
+    },
+    {
+      id: 12,
+      name: 'Dr. Miguel Angel De Lima',
+      description: 'Es Médico psiquiatra,  especialista en adicciones, con experiencia laboral en Barcelona, España y en París. Profesor de Psiquiatría y de Historia de la Medicina en la UCV. Premio Nacional de Psiquiatría y Premio a la Investigación "José María Vargas" de la Academia Nacional de Medicina. Ha publicado numerosos artículos científicos en revistas nacionales e internacionales y es autor de varios capítulos de libros de psiquiatría. Expresidente de la Sociedad Venezolana de Psiquiatría, actualmente es Vicepresidente de la Sociedad Venezolana de Historia de la Medicina. Padrino de varias promociones de psiquiatras y psicólogos clínicos y de una promoción de médicos cirujanos de la UCV. Poeta y ensayista, su obra está reseñada en el "Diccionario de escritores venezolanos, Quiénes escriben en Venezuela", de Rivas y García. Es columnista de El Diario de Caracas y colaborador de El Papel Literario del diario El Nacional. Se desempeña como corrector de textos. Es felinófilo y seguidor apasionado de los eléctricos Navegantes del Magallanes.',
+      img: 'images/sponsors/honorarios/miguel.webp'
+    },
+    {
+      id: 6,
+      name: 'Dr. Pedro Del Medico',
+      description: 'Egresado escuela Vargas de la Facultad de Medicina de la UCV y postgrado en Cirugía General en el hospital Vargas, años luego del grado de cirujano, fue designado Jefe de Quirófano, miembro de la Junta de Gobierno del Servicio autónomo Hospital Vargas y finalmente Director Médico de dicho hospital. Maestría en la UCAB en Gerencia de Centros de Salud, además de un grupo de cursos y diplomados en temas gerenciales. Egresado del PAG (ed. 71) del IESA siendo considerado por el comité de profesores como Alumno Destacado (Diploma), de dicha escuela fue Profesor invitado para el “Diplomado Para la Venezuela de hoy: formación de líderes para  Gerencia del sector salud en Venezuela” y Director Médico de la clínica Santa Sofía, Policlínica Metropolitana y Policlínica La Arboleda. Director Ejecutivo de la Asociación Venezolana de Clínicas y Hospitales, asesor externo de la JD de la Policlínica Metropolitana. Actualmente Director General de la Policlínica Metropolitana.',
+      img: 'images/sponsors/honorarios/pedro.webp'
     },
     {
       id: 8,
       name: 'Arq. Sonia Cedrés de Bello',
       description: 'Arquitecto y Doctor en Arquitectura por la Universidad Central de Venezuela y Master en Arquitectura por la Universidad de Washington. Profesor Titular de la Facultad de Arquitectura y Urbanismo de la UCV. Investigador sobre edificaciones para la salud. Conferencista y Ponente en Congresos nacionales e internacionales. Autor de libros y artículos en revistas arbitradas. Miembro fundador de AVAIMS y del Grupo Latinoamericano de IFHE. Miembro Honorario de la Academia Nacional de Ingeniería y el Hábitat.'
-    },
-    {
-      id: 6,
-      name: 'Dr. Pedro Del Medico',
-      description: null,
-      img: 'images/sponsors/honorarios/pedro.webp'
     },
     {
       id: 9,
@@ -69,11 +76,6 @@ export class HonoraryAlliesComponent {
     {
       id: 11,
       name: 'Arq. José Gregorio Chacón',
-      description: null
-    },
-    {
-      id: 12,
-      name: 'Dr. Miguel Angel De Lima',
       description: null
     },
     {

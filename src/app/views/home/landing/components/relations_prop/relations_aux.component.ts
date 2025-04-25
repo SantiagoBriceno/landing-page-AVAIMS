@@ -123,17 +123,18 @@ export class RelationsComponent {
       url: 'https://www.facebook.com/p/APAIH-Asociaci%C3%B3n-Paraguaya-de-Arquitectura-e-Ingenier%C3%ADa-Hospitalaria-100066525983678/?locale=en_GB'
     },
     {
-      title: 'SMAESAC',
-      src: 'https://www.smaesac.org/images/logo.png',
-      alt: 'SMAESAC Logo',
-      url: 'https://www.smaesac.org/'
-    },
-    {
       title: 'ADAIH',
       src: 'https://aadaih.org.ar/media/logo-AADAIH.png',
       alt: 'ADAIH Logo',
       url: 'https://aadaih.org.ar/'
     },
+    {
+      title: 'SMAESAC',
+      src: 'https://www.smaesac.org/images/logo.png',
+      alt: 'SMAESAC Logo',
+      url: 'https://www.smaesac.org/'
+    },
+
     {
       title: 'AARQHOS',
       src: 'https://aarqhos.cl/wp-content/uploads/2024/08/Logo-AARQHOS-v1-1536x266.png',
