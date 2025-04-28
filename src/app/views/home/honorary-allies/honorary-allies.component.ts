@@ -61,26 +61,30 @@ export class HonoraryAlliesComponent {
     {
       id: 8,
       name: 'Arq. Sonia Cedrés de Bello',
-      description: 'Arquitecto y Doctor en Arquitectura por la Universidad Central de Venezuela y Master en Arquitectura por la Universidad de Washington. Profesor Titular de la Facultad de Arquitectura y Urbanismo de la UCV. Investigador sobre edificaciones para la salud. Conferencista y Ponente en Congresos nacionales e internacionales. Autor de libros y artículos en revistas arbitradas. Miembro fundador de AVAIMS y del Grupo Latinoamericano de IFHE. Miembro Honorario de la Academia Nacional de Ingeniería y el Hábitat.'
+      description: 'Arquitecto y Doctor en Arquitectura por la Universidad Central de Venezuela y Master en Arquitectura por la Universidad de Washington. Profesor Titular de la Facultad de Arquitectura y Urbanismo de la UCV. Investigador sobre edificaciones para la salud. Conferencista y Ponente en Congresos nacionales e internacionales. Autor de libros y artículos en revistas arbitradas. Miembro fundador de AVAIMS y del Grupo Latinoamericano de IFHE. Miembro Honorario de la Academia Nacional de Ingeniería y el Hábitat.',
+      img: 'images/sponsors/honorarios/sonia.webp'
     },
     {
       id: 9,
       name: 'Dr. Arturo Alvarado',
-      description: null
-    },
-    {
-      id: 10,
-      name: 'Ing. Enzo Betancourt',
-      description: null
+      description: 'Licenciado en Biología (USB). Magister Scientiarum en Farmacología, Facultad de Farmacia, UCV. Doctor en Ciencias Fisiológicas, Mención Bioquímica, Facultad de Medicina, UCV. Estudios Postdoctorales en Espectroscopía Cerebral, Universidad de Tubingen, Alemania. Profesor Titular Jubilado, Cátedra de Farmacología y Toxicología, Facultad de Medicina, Escuela Luis Razetti, UCV. Investigador, Centro Diagnóstico Docente Las Mercedes (CDD).',
+      img: 'images/sponsors/honorarios/arturo.webp'
     },
     {
       id: 11,
       name: 'Arq. José Gregorio Chacón',
-      description: null
+      description: 'Arquitecto egresado de la UCV (1980), con un Postgrado en Planificación Física y Diseño Urbano (Instituto de Urbanismo, UCV, 1982). Su trayectoria de más de 40 años integra planificación urbana, ejercicio libre de la arquitectura y liderazgo gremial. Destaca como Tesorero Nacional del Colegio de Ingenieros de Venezuela (CIV, 2014-actualidad) y expresidente del Centro de Ingenieros del Área Metropolitana (CIAM, 2004-2014), promoviendo normativas urbanísticas y ética profesional. Destaca en proyectos como el Mausoleo de Seboruco (Táchira) y planes zonales en Caracas y Sucre. Docente de Ética Profesional (Universidad Nueva Esparta). Condecorado con la Medalla Vicente Lecuna y reconocimientos del CIV por su gestión gremial y urbanística.',
+      img: 'images/sponsors/honorarios/gregorio.webp'
     },
     {
       id: 13,
       name: 'Dr. Alfredo Saldeño',
+      description: 'Médico Emergenciólogo. Me he desempeñado en áreas de emergencia de adultos ( Hospital Universitario de Caracas, Hospital Militar "Dr. Carlos Arvelo" de Caracas). Diplomado en gerencia en Salud de la UCAB. Director Médico de Medimóvil, Coordinador Médico de CliniSanitas, Subdirector y Jefe de Emergencia de Clínica Atías, Director Médico de Centro Médico Integra y Director médico de Clínica Sanatrix.',
+      img: 'images/sponsors/honorarios/alfredo.webp'
+    },
+    {
+      id: 10,
+      name: 'Ing. Enzo Betancourt',
       description: null
     }
   ]
