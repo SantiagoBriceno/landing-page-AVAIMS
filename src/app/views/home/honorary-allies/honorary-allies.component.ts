@@ -85,7 +85,8 @@ export class HonoraryAlliesComponent {
     {
       id: 10,
       name: 'Ing. Enzo Betancourt',
-      description: null
+      img: 'images/sponsors/honorarios/enzo.webp',
+      description: 'Egresado de la Universidad Santa María (USM) como Ingeniero Civil mención Vías de Comunicación (1990), con posgrados en Gerencia de la Construcción (USM, 1994) y estudios de Maestría en Gerencia Empresarial. Presidente del CIV en dos periodos (2004-2014 y 2014-actualidad), destacó como Vicepresidente de la Unión Panamericana de Ingenieros (UPADI, 2009-2013). Con más de 50 años de trayectoria, inició como Inspector de Obras en el Concejo Municipal de Sucre (1972-1974) y ejerció como docente en la Facultad de Ingeniería de la USM. Actualmente, es Asesor Empresarial en proyectos de ingeniería y arquitectura, especializado en BIM y gestión de infraestructuras. Reconocido con distinciones gremiales por su liderazgo en el sector.'
     }
   ]
 
